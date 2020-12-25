@@ -5,9 +5,6 @@ import './App.css';// импорт стиля css
 import Header from "./component/Header";
 import NavContent from "./component/NavContent";
 
-
-
-
 const App = () => {
     return (
         <div className="App">
@@ -15,6 +12,5 @@ const App = () => {
             <NavContent/>
         </div>);
 }
-
 
 export default App;
