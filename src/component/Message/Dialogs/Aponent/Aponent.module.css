@@ -1,0 +1,16 @@
+.name{
+    margin-top: 2%;
+    font-size:x-large;
+
+}
+.message{
+    margin-top: 1%;
+    font-size:large;
+}
+.time{
+    margin-top: 0.5%;
+    font-size: x-small;
+}
+a :hover{
+    color: coral;
+}
