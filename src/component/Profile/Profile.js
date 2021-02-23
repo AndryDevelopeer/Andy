@@ -9,9 +9,9 @@ const Profile = (props) => {
     let refNews = React.createRef();/*создаем ссылку*/
 
     let textNew = () => {/* вызываем функцию при клеке*/
-        debugger;
-        let text = refNews.current.value;/*достаем значение ссылки*/
+       let text = refNews.current.value;/*достаем значение ссылки*/
         props.addPosts(text);/*выводим значение переменной*/
+        refNews.current.value="";
     }
 
     return (<div className={s.Profile}>

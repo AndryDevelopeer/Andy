@@ -144,16 +144,22 @@ let state={
 }
 export let addPost=(postMessage)=>{
     debugger;
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let yyyy = today.getFullYear();
+    today = mm + '.' + dd + '.' + yyyy;
+
    let newPost={
         id: 2,
-        date: "new Date()",
+        date: today,
         name: postMessage,
-        img: "",
+        img: "https://robogeek.ru/files/blogs/0012/6325/_cache/fit650x800-fit650x800ai.png",
         like:0,
         text: ""};
-    state.postArray.push(newPost);
+    state.postArray.unshift(newPost);
 
-    renderDom();
+    renderDom(state);
 }
 
 export default state;

@@ -2,9 +2,9 @@ import ReactDOM from "react-dom";
 import React from "react";
 import {BrowserRouter} from "react-router-dom";
 import App from "./App";
-import state, {addPost} from "./redux/state";
+import {addPost} from "./redux/state";
 
-export let renderDom=()=>{
+export let renderDom=(state)=>{
     ReactDOM.render(
 
         <React.StrictMode>
