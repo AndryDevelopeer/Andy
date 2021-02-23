@@ -14,7 +14,7 @@ const App = (props) => /* создаем компоненту которая в�
             <div className={s.App}>
                 <Header/>{/*компонента*/}
                 <div className={s.FirstPage}>
-                    <div className={s.content}>
+                    <div className={s.content}>//добавляем стиль
                         <Route path="/myProfile" render={()=><Profile array={props.array}/>}/>
                         {/*отпраляем полученный пропс в компаненту*/}
                         { /*рендирится нужная компонента по url адресу */}
