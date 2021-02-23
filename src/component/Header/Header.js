@@ -4,10 +4,15 @@ import {NavLink} from "react-router-dom";
 
 
 const Header = () => {
+
+    let friendYourself=()=>{
+        (alert("2021 год"))
+    }
+
     return (<div className={s.Header}>
             <div className={s.Header_search}>
                 <div className={s.Header_search_img}>
-                    <span className={s.span}> TWENTY TWO</span>
+                    <span className={s.span} onClick={friendYourself}> TWENTY TWO</span>
                 </div>
 
             </div>

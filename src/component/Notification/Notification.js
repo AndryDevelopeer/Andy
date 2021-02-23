@@ -1,19 +1,27 @@
 import React from "react"
-import News from "../News/News";
 import {NavLink} from "react-router-dom";
-import s from   "./Notification.module.css"
+import s from "./Notification.module.css"
 
-const Notification =()=>{
-    return(
+const Notification = (props) => {
+    let newsFriends = props.friends.map(n =>
+        <NavLink to=" ">
+            <div className={s.News}>
+                <div className={s.News_item}>
+                    <div className={s.News_item_User}>
+                        <div className={s.News_item_object}><img src={n.ava} alt=""/></div>
+                        <div className={s.News_item_object_name}> {n.name} </div>
+                    </div>
+                    <div className={s.News_item_do}> {n.do} </div>
+                </div>
+            </div>
+        </NavLink>
+    )
+    return (
+
         <div>
-            <h3 className={s.link}>
-                <NavLink to="" >
-                News
-            </NavLink>
-                </h3>
-            <News name={"Andrew Gerasimenko"} do={"Отправил вам сообщение"}/>
-            <News name={"Mark Stavrovich"} do={"Понравилась ваша запись"}/>
-            <News name={"Nikolay Iceman"} do={"Хочет добавить вас в друзья"}/>
+            <NavLink to={"/news"}><h3>News</h3></NavLink>
+            <div>{newsFriends}</div>
+
         </div>
     )
 }

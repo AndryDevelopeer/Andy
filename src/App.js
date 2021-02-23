@@ -14,14 +14,15 @@ const App = (props) => /* создаем компоненту которая в�
             <div className={s.App}>
                 <Header/>{/*компонента*/}
                 <div className={s.FirstPage}>
-                    <div className={s.content}>//добавляем стиль
-                        <Route path="/myProfile" render={()=><Profile array={props.array}/>}/>
+                    <div className={s.content}>
+                        <Route path="/myProfile" render={()=>
+                            <Profile array={props.state.postArray} addPosts={props.addPost}/>}/>
                         {/*отпраляем полученный пропс в компаненту*/}
                         { /*рендирится нужная компонента по url адресу */}
-                        <Route path="/message" render={()=><Messages friends={props.friends}/>}/> {/*рендирится нужная компонента по url адресу */}
-                        <Route path="/myFriends" render={()=><MyFriends friends={props.friends}/>}/> {/*рендирится компонента по url адресу */}
+                        <Route path="/message" render={()=><Messages friends={props.state.myFriendsArray}/>}/> {/*рендирится нужная компонента по url адресу */}
+                        <Route path="/myFriends" render={()=><MyFriends friends={props.state.myFriendsArray}/>}/> {/*рендирится компонента по url адресу */}
                     </div>
-                    <Notification/>{/*компонента*/}
+                    <Notification friends={props.state.myFriendsArray}/>{/*компонента*/}
                 </div>
             </div>
         </BrowserRouter>
