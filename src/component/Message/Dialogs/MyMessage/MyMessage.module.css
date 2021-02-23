@@ -1,0 +1,14 @@
+.myAnswer {
+    text-align: right;
+    margin: 1%;
+}
+
+.answerText {
+    margin-top: 1%;
+    font-size: large;
+}
+
+.time {
+    margin-top: 0.5%;
+    font-size: x-small;
+}

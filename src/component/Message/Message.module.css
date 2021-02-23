@@ -1,0 +1,87 @@
+.ava{
+    border-radius: 40px;
+    margin: 10px 0 0 0;
+    width: 80px;
+    height: 80px;
+    position: sticky;
+    overflow: hidden;
+}
+.item{
+    font-size: 80%;
+    display: flex;
+    align-items: center;
+    margin:4% 0 4% 2%;
+    justify-content: flex-start;
+    align-self: center;
+    height: 20%;
+}
+.name{
+    margin-left: 2%;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+a :hover{
+    color: coral;
+}
+.content {
+
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5%;
+}
+
+.contact {
+    height: auto;
+    width: 350px;
+    margin: 0% 1% 3% 1%;
+    min-width: 200px;
+}
+.contact :hover{
+    color: coral;
+
+}
+
+.dialogs {
+    height: 95%;
+    width: 65%;
+    border: #282c34 3px solid;
+    margin: 1% 1% 3% 1%;
+    overflow: auto;
+    border-radius: 10px;
+}
+
+.message {
+    margin: 1% 1% 1% 2%;
+    width: 97.5%;
+    height: 520px;
+    overflow: auto;
+}
+
+.messageArea {
+    display: flex;
+    border-radius: 5px;
+    margin: 1%;
+    width: 98%;
+    height: 12%;
+}
+
+.input {
+    border-radius: 5px;
+    margin: 0.5%;
+    width: 91%;
+    height: auto;
+    font-size: large;
+}
+
+.button {
+    border-radius: 5px;
+    margin: 0.5%;
+    width: 8%;
+    height: auto;
+    font-size: large;
+}
+
