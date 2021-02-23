@@ -1,0 +1,127 @@
+.Profile_News{
+    display: flex;
+    justify-content: space-between;
+}
+.Profile {
+
+    width: 97%;
+    height: 2500px;
+    margin: 10px;
+    color: white;
+    font-size: 30px;
+    padding-top: 1%;
+
+
+}
+
+.Profile_header_img {
+    border-radius: 5px;
+    height: 200px;
+    overflow: hidden;
+
+
+}
+
+.Profile_header_img img {
+    width: 100%;
+    display: block;
+}
+
+.Ava {
+    overflow: hidden;
+    border: black solid 2px;
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+    box-shadow: 0 0 20px 15px black;
+    margin: -80px 0px 0px 15px;
+    position: relative;
+    z-index: 1;
+    align-content: center;
+}
+
+.Ava img {
+    width: 100%;
+}
+
+.About {
+    font-size: large;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    overflow: hidden;
+    height: 9%;
+
+}
+
+.Name {
+    padding-left: 30px;
+    text-align: left;
+    height: 200px;
+    width: 37%;
+
+}
+
+.Name_User {
+    font-size: x-large;
+    padding-bottom: 10px;
+
+}
+
+.Name_Prof {
+
+    padding-bottom: 5px;
+
+}
+
+.Name_Sity {
+    color: #666;
+    margin-bottom: 20px;
+
+
+}
+
+.Name_Message {
+    margin-right: 10px;
+    width: 180px;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    font-size: medium;
+    color: azure;
+    background-color: #282c34;
+}
+button:hover{
+    color: coral;
+}
+button:active{
+    color: black;
+    background-color:coral;
+}
+.Name_Add {
+    width: 50px;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    font-size: large;
+    color: azure;
+    background-color: #282c34;
+
+}
+
+.Exp {
+
+    height: 200px;
+    width: 37%;
+
+}
+
+.Exp div {
+    margin-bottom: 10px;
+    line-height: 35px;
+}
+
+.Exp span {
+    color: #666;
+}
+

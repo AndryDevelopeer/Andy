@@ -1,0 +1,42 @@
+
+.itemDialog{
+    font-size: 85%;
+    display: flex;
+    align-items: center;
+    margin:4% 0 4% 0;
+    justify-content: flex-start;
+    align-self: center;
+    height: 20%;
+}
+.message{
+    text-align: left;
+    font-size: small;
+}
+.about{
+
+    width: 20%;
+    font-size: 62%;
+}
+.itemDialogAva{
+    border-radius: 40px;
+    margin: 10px 0 0 0;
+    width: 80px;
+    height: 80px;
+    position: sticky;
+    overflow: hidden;
+
+}
+.itemFriends{
+    vertical-align: center;
+    width: 30%;
+    margin-left: 5%;
+
+}
+.itemDialogName{
+    font-size:100%;
+     text-align: left;
+
+}
+.itemDialogAva img{
+    height: 100%;
+}
