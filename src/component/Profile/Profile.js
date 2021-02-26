@@ -3,15 +3,18 @@ import s from "./Profile.module.css"
 import MyBlog from "./MyBlog/MyBlog";
 
 
-
 const Profile = (props) => {
 
     let refNews = React.createRef();/*создаем ссылку*/
 
     let textNew = () => {/* вызываем функцию при клеке*/
-       let text = refNews.current.value;/*достаем значение ссылки*/
-        props.addPosts(text);/*выводим значение переменной*/
-        refNews.current.value="";
+        /* let text = refNews.current.value;/!*достаем значение ссылки*!/*/
+        props.addPosts();/*выводим значение переменной text*/
+    }
+    let newPostText = () => {
+        let text = refNews.current.value;
+        props.newPostText(text);
+
     }
 
     return (<div className={s.Profile}>
@@ -48,8 +51,10 @@ const Profile = (props) => {
                 </div>
             </div>
             <div className={s.writeNews}>
-                <input ref={refNews} defaultValue={"Какие новости? "} className={s.watsNews}/>{/*ссылка*/}
-                <button onClick={textNew}  >send</button>{/* отслеживаем клик по кнопке и вызываем функцию*/}
+                <input ref={refNews} value={props.newPost} onChange={newPostText}
+                       className={s.watsNews}/>{/*ссылка*/}
+                <button onClick={textNew}>send</button>
+                {/* отслеживаем клик по кнопке и вызываем функцию*/}
             </div>
             <MyBlog array={props.array}/> {/*отпраляем полученный пропс в компаненту*/}
         </div>
