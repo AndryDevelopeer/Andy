@@ -9,7 +9,7 @@ const MyBlog = (props) => {
     return (
 
         <div className={s.Blog}>
-            <MyPost array={props.array} />{/*отправляем аргументы array в функцию(компаненту MyPost)*/}
+            <MyPost array={props.array}/>{/*отправляем аргументы array в функцию(компаненту MyPost)*/}
         </div>
     )
 }

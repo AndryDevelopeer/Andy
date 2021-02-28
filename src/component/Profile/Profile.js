@@ -13,7 +13,7 @@ const Profile = (props) => {
     }
     let newPostText = () => {
         let text = refNews.current.value;
-        props.newPostText(text);
+        props.addTextPost(text);
 
     }
 
@@ -52,15 +52,12 @@ const Profile = (props) => {
             </div>
             <div className={s.writeNews}>
                 <input ref={refNews} value={props.newPost} onChange={newPostText}
-                       className={s.watsNews}/>{/*ссылка*/}
+                       className={s.watsNews} />{/*ссылка*/}
                 <button onClick={textNew}>send</button>
                 {/* отслеживаем клик по кнопке и вызываем функцию*/}
             </div>
             <MyBlog array={props.array}/> {/*отпраляем полученный пропс в компаненту*/}
         </div>
-
     )
-
-
 }
 export default Profile;
