@@ -1,19 +1,20 @@
 import React from "react"
 import s from "./Profile.module.css"
 import MyBlog from "./MyBlog/MyBlog";
+import {addPostActionCreator, newPostTextActionCreator} from "../../redux/state";/*import action creator*/
 
 
 const Profile = (props) => {
 
     let refNews = React.createRef();/*создаем ссылку*/
 
+
     let textNew = () => {/* вызываем функцию при клеке*/
-        /* let text = refNews.current.value;/!*достаем значение ссылки*!/*/
-        props.addPosts();/*выводим значение переменной text*/
+        props.dispatch(addPostActionCreator());
     }
     let newPostText = () => {
-        let text = refNews.current.value;
-        props.addTextPost(text);
+        let text = refNews.current.value;/* let text = refNews.current.value;/!*достаем значение ссылки*!/*/
+        props.dispatch(newPostTextActionCreator(text));/*выводим значение переменной text*/
 
     }
 
@@ -52,7 +53,7 @@ const Profile = (props) => {
             </div>
             <div className={s.writeNews}>
                 <input ref={refNews} value={props.newPost} onChange={newPostText}
-                       className={s.watsNews} />{/*ссылка*/}
+                       className={s.watsNews}/>{/*ссылка*/}
                 <button onClick={textNew}>send</button>
                 {/* отслеживаем клик по кнопке и вызываем функцию*/}
             </div>

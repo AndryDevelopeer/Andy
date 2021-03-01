@@ -1,3 +1,6 @@
+const ADD_POST = "ADD-POST";
+const ADD_TEXT_POST="ADD-TEXT-POST";
+
 let store = {
     _state: {
         postArray: [
@@ -162,30 +165,39 @@ let store = {
         // peremennaya ishetsa vne function v roditelskom faile
     },
 
-    addPost ()  {
-        let today = new Date();
-        let dd = String(today.getDate()).padStart(2, '0');
-        let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-        let yyyy = today.getFullYear();
-        today = dd + '.' + mm + '.' + yyyy;
+    dispatch(action){/* type:"TEXT"*/ // metod dlya rabotu so storom iz vne
 
-        let newPost = {
-            id: 2,
-            date: today,
-            name: this._state.newPostText,
-            img: "https://robogeek.ru/files/blogs/0012/6325/_cache/fit650x800-fit650x800ai.png",
-            like: 0,
-            text: ""
-        };
-        this._state.postArray.unshift(newPost);
-        this._state.newPostText = ("New post");
-        this._callSubscriber();// call renderDom pri change state
-    },
-    addTextPost  (text)  {
-        this._state.newPostText = text;
-        this._callSubscriber();
-    }
+        if( action.type==="ADD-POST"){
+            let today = new Date();
+            let dd = String(today.getDate()).padStart(2, '0');
+            let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+            let yyyy = today.getFullYear();
+            today = dd + '.' + mm + '.' + yyyy;
+
+            let newPost = {
+                id: 2,
+                date: today,
+                name: this._state.newPostText,
+                img: "https://robogeek.ru/files/blogs/0012/6325/_cache/fit650x800-fit650x800ai.png",
+                like: 0,
+                text: ""
+            };
+            this._state.postArray.unshift(newPost);
+            this._state.newPostText = ("New post");
+            this._callSubscriber();// call renderDom pri change state
+        }else if(action.type==="ADD-TEXT-POST"){/*esly u prihodyashego dispatch
+        type equals "add post" to delaem eto*/
+            this._state.newPostText = action.text;/* to 4to prishlo v action s type text*/
+            this._callSubscriber();
+        }
+    }/*obshiy metod dly vuzova*/
 }
+export const addPostActionCreator = () => ({ type:ADD_POST }); /*export from addPost in Profile*/
+/*esli function tol'ko returnit zna4enie ee sintscsis budet takoy*/
+
+export const newPostTextActionCreator = (text) => ({ type: ADD_TEXT_POST, text: text })/*export from addTextPost in Profile*/
+/*esli function tol'ko returnit zna4enie ee sintscsis budet takoy*/
+
 
 window.store = store;
 export default store;

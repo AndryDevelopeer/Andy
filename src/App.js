@@ -9,6 +9,7 @@ import MyFriends from "./component/MyFriends/MyFriends";
 //импорт компоненты
 
 const App = (props) => /* создаем компоненту которая возвращает разметку jsx*/{
+
     return (
         <BrowserRouter>{/*отслеживает клики дороги*/ }
             <div className={s.App}>
@@ -17,8 +18,7 @@ const App = (props) => /* создаем компоненту которая в�
                     <div className={s.content}>
                         <Route path="/myProfile" render={()=>
                             <Profile array={props.state.postArray} newPost={props.state.newPostText}//прокидываем данные
-                                     addTextPost={props.addTextPost} addPosts={props.addPost}/*прокидываем функции callback? */
-                            addLike={props.addLike}/>}/>
+                                     dispatch={props.dispatch} /*прокидываем функции callback? *//>}/>
                         {/*отпраляем полученный пропс в компаненту*/}
                         { /*рендирится нужная компонента по url адресу */}
                         <Route path="/message" render={()=><Messages friends={props.state.myFriendsArray}/>}/> {/*рендирится нужная компонента по url адресу */}

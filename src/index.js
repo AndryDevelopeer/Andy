@@ -6,12 +6,13 @@ import  store from "./redux/state"
 import s from "./index.css"
 
 let rerenderEntireTree =()=>{
+
     ReactDOM.render(
 
         <React.StrictMode>
             <BrowserRouter>
-                <App state={store.getState()} addPost={store.addPost.bind(store)}// zabindili store jestko privazali k store
-                     addTextPost={store.addTextPost.bind(store)}/>{/*отправляем аргумент с обьектом внутри в компоненту*/}
+                                <App state={store.getState()} dispatch={store.dispatch.bind(store)}// zabindili store jestko privazali k store
+                   />{/*отправляем аргумент с обьектом внутри в компоненту*/}
             </BrowserRouter>
         </React.StrictMode>,
         document.getElementById('root')
