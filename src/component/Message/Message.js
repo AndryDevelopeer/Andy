@@ -2,7 +2,6 @@ import React from "react"
 import s from "./Message.module.css"
 import { NavLink} from "react-router-dom";
 
-
 const Messages = (props) => {
 
     let newMessageElement = React.createRef();/*...этой ссылки!!! которая ссылаеться на object со свойствой ref!*/
@@ -13,7 +12,7 @@ const Messages = (props) => {
     }
 
     let dialogsElements = props.friends.map(d =>
-        <NavLink to={d.id}>
+        <NavLink to={"message"}>
             <div className={s.itemDialog}>
                 <div className={s.itemDialogAva}><img src={d.ava} alt=""/></div>
                 <div className={s.itemFriends}>
