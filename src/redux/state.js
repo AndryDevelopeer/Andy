@@ -202,4 +202,4 @@ export const newPostTextActionCreator = (text) => ({ type: ADD_TEXT_POST, text: 
 window.store = store;
 export default store;
 
-// from xubuntu 02.03.2021
+// from xubuntu 02.03.2021 v2
