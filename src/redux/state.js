@@ -159,8 +159,8 @@ let store = {
     getState() {
         return (this._state)
     },
-    subscribe(observer) {// jdem vuzova funkcii  s parametrom observer // PATRN
-        this._callSubscriber = observer;// prisvaevaem peremennoy renderDom funkciy iz parametra observer
+    subscribe(observer) {// wait call function  with parametr observer // PATRN
+        this._callSubscriber = observer;// assign perametr renderDom funkction in parametr observer
         // zamukanie function renderDom bez obiavleniy!!!!
         // peremennaya ishetsa vne function v roditelskom faile
     },

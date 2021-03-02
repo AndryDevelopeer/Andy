@@ -10,8 +10,8 @@ let rerenderEntireTree =()=>{
     ReactDOM.render(
 
         <React.StrictMode>
-            <BrowserRouter>
-                                <App state={store.getState()} dispatch={store.dispatch.bind(store)}// zabindili store jestko privazali k store
+            <BrowserRouter>{/*отслеживает клики дороги*/ }
+                                <App state={store.getState()} dispatch={store.dispatch.bind(store)}// zabindili store, hardcode with store
                    />{/*отправляем аргумент с обьектом внутри в компоненту*/}
             </BrowserRouter>
         </React.StrictMode>,

@@ -5,13 +5,13 @@ import Messages from "./component/Message/Message"//импорт компоне�
 import Profile from "./component/Profile/Profile";//импорт компоненты
 import {BrowserRouter, Route} from 'react-router-dom';// импорт библиотеки отрисовки по url
 import Notification from "./component/Notification/Notification";//импорт компоненты
-import MyFriends from "./component/MyFriends/MyFriends";
-//импорт компоненты
+import MyFriends from "./component/MyFriends/MyFriends";//импорт компоненты
+
 
 const App = (props) => /* создаем компоненту которая возвращает разметку jsx*/{
 
     return (
-        <BrowserRouter>{/*отслеживает клики дороги*/ }
+       <div>
             <div className={s.App}>
                 <Header/>{/*компонента*/}
                 <div className={s.FirstPage}>
@@ -27,7 +27,7 @@ const App = (props) => /* создаем компоненту которая в�
                     <Notification friends={props.state.myFriendsArray}/>
                 </div>
             </div>
-        </BrowserRouter>
+       </div>
     )
 }
 
