@@ -1,4 +1,6 @@
-
+.text{
+    text-align: right;
+}
 .dialogs {
     height: 95%;
     width: 65%;
@@ -13,6 +15,7 @@
     width: 97.5%;
     height:430px;
     overflow: auto;
+    text-align: right;
 }
 
 .messageArea {

@@ -1,53 +1,61 @@
+import profileReducer from "./profileReducer";
+import dialogsReducer from "./dialogsReducer";
+import myFriendReducer from "./myFriendReducer";
+
 const ADD_POST = "ADD-POST";
 const ADD_TEXT_POST = "ADD-TEXT-POST";
+const ADD_NEW_MESSAGE = "ADD-NEW-MESSAGE";
+const SEND_MESSAGE = "SEND-MESSAGE";
 
 let store = {
     _state: {
-        postArray: [
-            {
-                id: 0,
-                date: "24.12.2020",
-                name: "СЕРВИСНЫЕ РОБОТЫ",
-                img: "https://robogeek.ru/files/blogs/0012/6326/_cache/fit650x800-nuro.jpeg",
-                like: 22,
-                text: "   Беспилотники Nuro начинают коммерческие доставки в Калифорнии\n" +
-                    "Nuro получила разрешение на коммерческую эксплуатацию беспилотных транспортных средств\n" +
-                    "доставки\n" +
-                    "в Калифорнии. Это означает, что компания из Кремниевой долины сможет начать взимать с\n" +
-                    "клиентов\n" +
-                    "плату за услуги по доставке, используя свои беспилотные автомобили."
-            },
+        profilePage:{
+            newPostText: "New post",/*!!!!!!!peredelat'!!!!!!*/
+            postArray:[
+                {
+                    id: 0,
+                    date: "24.12.2020",
+                    name: "СЕРВИСНЫЕ РОБОТЫ",
+                    img: "https://robogeek.ru/files/blogs/0012/6326/_cache/fit650x800-nuro.jpeg",
+                    like: 22,
+                    text: "   Беспилотники Nuro начинают коммерческие доставки в Калифорнии\n" +
+                        "Nuro получила разрешение на коммерческую эксплуатацию беспилотных транспортных средств\n" +
+                        "доставки\n" +
+                        "в Калифорнии. Это означает, что компания из Кремниевой долины сможет начать взимать с\n" +
+                        "клиентов\n" +
+                        "плату за услуги по доставке, используя свои беспилотные автомобили."
+                },
 
-            {
-                id: 1,
-                date: "23.12.2020",
-                name: "ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ",
-                img: "https://robogeek.ru/files/blogs/0012/6325/_cache/fit650x800-fit650x800ai.png",
-                like: 541,
-                text: "   Утверждена программа стандартизации в области искусственного интеллекта\n" +
-                    "Перспективная программа стандартизации по приоритетному направлению «Искусственный\n" +
-                    "интеллект» на\n" +
-                    "период 2021 – 2024 годы утверждена заместителем министра экономического развития России\n" +
-                    "Оксаной\n" +
-                    "Тарасенко и заместителем руководителя Росстандарта Антоном Шалаевым"
-            },
-            {
-                id: 2,
-                date: "22.12.2020",
-                name: "НОВОСТИ КОМПАНИЙ",
-                img: "https://robogeek.ru/files/blogs/0012/6330/_cache/fit650x800-cuberover.JPG",
-                like: 85,
-                text: "  В 2020 году Smart Engines заработала на ИИ 247.5 млн руб., продав 91.9 млн распознаваний, и\n" +
-                    "опубликовала 64 научные работы\n" +
-                    "Российская научная компания Smart Engines, разрабатывающая технологии «зеленого» ИИ,\n" +
-                    "подводит\n" +
-                    "итоги деятельности за 2020 г. В текущем году компания представила новое поколение систем\n" +
-                    "распознавания Smart Vision Engines для автоматического извлечения данных ID документов,\n" +
-                    "банковских карт, баркодов, деловых документов, биометрической верификации и компьютерной\n" +
-                    "томографии."
-            }
-        ],/*массив с постами*/
-        newPostText: "New post",
+                {
+                    id: 1,
+                    date: "23.12.2020",
+                    name: "ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ",
+                    img: "https://robogeek.ru/files/blogs/0012/6325/_cache/fit650x800-fit650x800ai.png",
+                    like: 541,
+                    text: "   Утверждена программа стандартизации в области искусственного интеллекта\n" +
+                        "Перспективная программа стандартизации по приоритетному направлению «Искусственный\n" +
+                        "интеллект» на\n" +
+                        "период 2021 – 2024 годы утверждена заместителем министра экономического развития России\n" +
+                        "Оксаной\n" +
+                        "Тарасенко и заместителем руководителя Росстандарта Антоном Шалаевым"
+                },
+                {
+                    id: 2,
+                    date: "22.12.2020",
+                    name: "НОВОСТИ КОМПАНИЙ",
+                    img: "https://robogeek.ru/files/blogs/0012/6330/_cache/fit650x800-cuberover.JPG",
+                    like: 85,
+                    text: "  В 2020 году Smart Engines заработала на ИИ 247.5 млн руб., продав 91.9 млн распознаваний, и\n" +
+                        "опубликовала 64 научные работы\n" +
+                        "Российская научная компания Smart Engines, разрабатывающая технологии «зеленого» ИИ,\n" +
+                        "подводит\n" +
+                        "итоги деятельности за 2020 г. В текущем году компания представила новое поколение систем\n" +
+                        "распознавания Smart Vision Engines для автоматического извлечения данных ID документов,\n" +
+                        "банковских карт, баркодов, деловых документов, биометрической верификации и компьютерной\n" +
+                        "томографии."
+                }
+            ]
+        } ,/*массив с постами*/
         myFriendsArray: [
             {
                 id: "0",
@@ -120,7 +128,6 @@ let store = {
                 ava: "https://sun9-65.userapi.com/impf/m7BRMOfqQjIkU2WepJlZaSI18dVyX1xi8h1Acw/r3MvEJAjqqM.jpg?size=1280x720&quality=96&sign=63a8f1481c6d59e66348a850de4ebe7e&type=album"
 
             },
-
             {
                 id: "7",
                 name: "Георгий Волосошвилли",
@@ -135,7 +142,12 @@ let store = {
 
         ],/*массив с френдами*/
         dialogsPage: {
-            newTextMessage: "New message ",
+            newTextMessage: " ",
+            sendTextMessage: [
+                {id: 1, message: "HI"},
+                {id: 2, message: "Where you were?"},
+                {id: 3, message: "Call my please today past 18-00?"}
+            ],
             dialogs: [
                 {
                     id: 1,
@@ -208,7 +220,6 @@ let store = {
     },
     _callSubscriber() {// obyavlyaem function dlya rendera Dom
     },
-
     getState() {
         return (this._state)
     },
@@ -217,47 +228,25 @@ let store = {
         // zamukanie function renderDom bez obiavleniy!!!!
         // peremennaya ishetsa vne function v roditelskom faile
     },
-
     dispatch(action) {/* type:"TEXT"*/ // metod dlya rabotu so storom iz vne
-
-        if (action.type === "ADD-POST") {
-            let today = new Date();
-            let dd = String(today.getDate()).padStart(2, '0');
-            let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-            let yyyy = today.getFullYear();
-            today = dd + '.' + mm + '.' + yyyy;
-
-            let newPost = {
-                id: 2,
-                date: today,
-                name: this._state.newPostText,
-                img: "https://robogeek.ru/files/blogs/0012/6325/_cache/fit650x800-fit650x800ai.png",
-                like: 0,
-                text: ""
-            };
-            this._state.postArray.unshift(newPost);
-            this._state.newPostText = ("New post");
-            this._callSubscriber();// call renderDom pri change state
-        } else if (action.type === "ADD-TEXT-POST") {/*esly u prihodyashego dispatch
-        type equals "add post" to delaem eto*/
-            this._state.newPostText = action.text;/* to 4to prishlo v action s type text*/
-            this._callSubscriber();
-        }
+        /*action eto objeckt u cotorogo esti svoistvo type and ....*/
+        this._state.profilePage = profileReducer(this._state.profilePage, action)/*!!!!!!!peredelat'!!!!!!*/
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action)
+        this._state.myFriendsArray = myFriendReducer(this._state.myFriendsArray, action)
+        this._callSubscriber();
     }/*obshiy metod dly vuzova*/
 }
 
-export const addNewMessage = (text) => {
-    store._state.dialogsPage.newTextMessage = text;
-    store._callSubscriber();
-}
+/*sozdanie action dispatch*/
+export const newPostTextActionCreator = (text) => ({type: ADD_TEXT_POST, text: text});/*export from addTextPost in Profile*/
+/*esli function tol'ko returnit zna4enie ee sintscsis budet takoy*/
 export const addPostActionCreator = () => ({type: ADD_POST}); /*export from addPost in Profile*/
 /*esli function tol'ko returnit zna4enie ee sintscsis budet takoy*/
 
-export const newPostTextActionCreator = (text) => ({type: ADD_TEXT_POST, text: text})/*export from addTextPost in Profile*/
-/*esli function tol'ko returnit zna4enie ee sintscsis budet takoy*/
+export const newMessageTextActionCreator = (text) => ({type: ADD_NEW_MESSAGE, text: text});/* obnovlenie simbol*/
+export const sendMessageActionCreator = () => ({type: SEND_MESSAGE});/* add message*/
 
-
-window.store = store;
+window.store = store;/*global*/
 export default store;
 
 // from xubuntu 02.03.2021 v2

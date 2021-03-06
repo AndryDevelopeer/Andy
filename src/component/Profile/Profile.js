@@ -5,19 +5,14 @@ import {addPostActionCreator, newPostTextActionCreator} from "../../redux/state"
 
 
 const Profile = (props) => {
-
-    let refNews = React.createRef();/*создаем ссылку*/
-
-
-    let textNew = () => {/* вызываем функцию при клеке*/
+debugger;
+       let textNew = () => {/* вызываем функцию при клеке*/
         props.dispatch(addPostActionCreator());
     }
-    let newPostText = () => {
-        let text = refNews.current.value;/* let text = refNews.current.value;/!*достаем значение ссылки*!/*/
+    let newPostText = (e) => {
+        let text = e.target.value;/* let text = refNews.current.value;/!*достаем значение ссылки*!/*/
         props.dispatch(newPostTextActionCreator(text));/*выводим значение переменной text*/
-
     }
-
     return (<div className={s.Profile}>
             <div className={s.Profile_header_img}>
                 <img src="https://json.tv/public/images/general/2016/04/12/20160412234606-7129.jpg" alt=""/>
@@ -52,12 +47,12 @@ const Profile = (props) => {
                 </div>
             </div>
             <div className={s.writeNews}>
-                <input ref={refNews} value={props.newPost} onChange={newPostText}
+                <input value={props.posts.newPostText} onChange={newPostText}
                        className={s.watsNews}/>{/*ссылка*/}
                 <button onClick={textNew}>send</button>
                 {/* отслеживаем клик по кнопке и вызываем функцию*/}
             </div>
-            <MyBlog array={props.array}/> {/*отпраляем полученный пропс в компаненту*/}
+            <MyBlog posts={props.posts}/> {/*отпраляем полученный пропс в компаненту*/}
         </div>
     )
 }

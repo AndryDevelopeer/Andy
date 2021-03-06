@@ -1,31 +1,30 @@
-import s from "../Dialogs.module.css";
+import s from "./Message.module.css"
 import React from "react";
+import {newMessageTextActionCreator, sendMessageActionCreator} from "../../../redux/state"
 
 const Message = (props) => {
-    let alert = () => {
+    let text = props.dialogs.sendTextMessage.map(p =>/*dostaem spisok soobsheniy*/
+        <div className={s.text}>{p.message}</div>
+    )
 
+    let addMessage = (e) => {/*obnovlyaem text input*/
+        let text = e.target.value;/*берет значение переменной из...*/
+        props.dispatch(newMessageTextActionCreator(text)); /*render text ok!!*/
     }
-    let newMessageElement = React.createRef();/*...этой ссылки!!! которая ссылаеться на object со свойствой ref!*/
-
-    let addMessage = () => {
-        let text = newMessageElement.current.value;/*берет значение переменной из...*/
-        props.addNewMessage(text); /*render text ok!!*/
-    }
-
-    
-/* nedd doing update array textmessage!!!!*/
+    let sendMessage = () => {
+        props.dispatch(sendMessageActionCreator())/*call function iz state*/
+    };
 
 
     return (
         <div className={s.dialogs}>
-            {/* <Route path={"/0"} component={Dialogs0}/>*/}
             <div className={s.message}>
-
+                {text}
             </div>
             <div className={s.messageArea}>
-                <input onChange={addMessage} ref={newMessageElement} className={s.input}
-                       value={props.dialogs}/>{/* вот на этот обьект*/}
-                <button onClick={alert} className={s.button}/>
+                <input onChange={addMessage} className={s.input}
+                       value={props.dialogs.newTextMessage}/>
+                <button onClick={sendMessage} className={s.button}/>
                 {/*вызывает функции при клике*/}
             </div>
         </div>
