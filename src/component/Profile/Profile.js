@@ -1,11 +1,10 @@
 import React from "react"
 import s from "./Profile.module.css"
 import MyBlog from "./MyBlog/MyBlog";
-import {addPostActionCreator, newPostTextActionCreator} from "../../redux/state";/*import action creator*/
+import {addPostActionCreator, newPostTextActionCreator} from "../../redux/profileReducer";/*import action creator*/
 
 
 const Profile = (props) => {
-debugger;
        let textNew = () => {/* вызываем функцию при клеке*/
         props.dispatch(addPostActionCreator());
     }

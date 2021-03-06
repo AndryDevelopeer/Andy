@@ -2,15 +2,10 @@ import profileReducer from "./profileReducer";
 import dialogsReducer from "./dialogsReducer";
 import myFriendReducer from "./myFriendReducer";
 
-const ADD_POST = "ADD-POST";
-const ADD_TEXT_POST = "ADD-TEXT-POST";
-const ADD_NEW_MESSAGE = "ADD-NEW-MESSAGE";
-const SEND_MESSAGE = "SEND-MESSAGE";
-
 let store = {
     _state: {
         profilePage:{
-            newPostText: "New post",/*!!!!!!!peredelat'!!!!!!*/
+            newPostText: "New post",
             postArray:[
                 {
                     id: 0,
@@ -236,15 +231,6 @@ let store = {
         this._callSubscriber();
     }/*obshiy metod dly vuzova*/
 }
-
-/*sozdanie action dispatch*/
-export const newPostTextActionCreator = (text) => ({type: ADD_TEXT_POST, text: text});/*export from addTextPost in Profile*/
-/*esli function tol'ko returnit zna4enie ee sintscsis budet takoy*/
-export const addPostActionCreator = () => ({type: ADD_POST}); /*export from addPost in Profile*/
-/*esli function tol'ko returnit zna4enie ee sintscsis budet takoy*/
-
-export const newMessageTextActionCreator = (text) => ({type: ADD_NEW_MESSAGE, text: text});/* obnovlenie simbol*/
-export const sendMessageActionCreator = () => ({type: SEND_MESSAGE});/* add message*/
 
 window.store = store;/*global*/
 export default store;

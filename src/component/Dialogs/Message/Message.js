@@ -1,6 +1,6 @@
 import s from "./Message.module.css"
 import React from "react";
-import {newMessageTextActionCreator, sendMessageActionCreator} from "../../../redux/state"
+import {newMessageTextActionCreator, sendMessageActionCreator} from "../../../redux/dialogsReducer"
 
 const Message = (props) => {
     let text = props.dialogs.sendTextMessage.map(p =>/*dostaem spisok soobsheniy*/
