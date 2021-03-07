@@ -1,54 +1,40 @@
-.itemDialog{
-    font-size: 85%;
-    display: flex;
-    align-items: center;
-    margin:4% 0 4% 0;
-    justify-content: flex-start;
-    align-self: center;
-    height: 20%;
-}
-.unread{
+.unread {
     text-align: left;
     font-size: small;
 }
 
-
-.name{
-    font-size: 80%;
-}
 .content {
-
     position: relative;
     display: flex;
     justify-content: space-between;
-    margin: 0.5%;
-    width:100%;
+    width: 100%;
 }
 
 .contact {
     height: auto;
     width: 350px;
-    margin: 0 1% 3% 1%;
+    margin-left: 4%;
     min-width: 200px;
+    padding: 1%;
 }
-.contact :hover{
-    color: coral;
 
+.contact :hover {
+    color: coral;
 }
 
 .dialogs {
     height: 95%;
     width: 65%;
     border: #282c34 3px solid;
-    margin: 5% 1% 3% 1%;
+    margin: 1%;
     overflow: auto;
     border-radius: 10px;
 }
 
 .message {
-    margin: 1% 1% 1% 2%;
+    margin: 2%;
     width: 97.5%;
-    height:430px;
+    height: 430px;
     overflow: auto;
 }
 
@@ -77,13 +63,46 @@
     height: auto;
     font-size: large;
 }
-.nameItem{
-    margin-top: 2%;
-    font-size:x-large;
 
+.nameItem {
+    font-size: x-large;
 }
-.messageItem{
+
+.messageItem {
     margin-top: 1%;
-    font-size:large;
+    font-size: large;
+}
+
+.itemDialog {
+    font-size: 85%;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    justify-content: flex-start;
+    align-self: center;
+    height: 20%;
+}
+
+.itemDialogAva {
+    border-radius: 40px;
+    margin: 0;
+    width: 60px;
+    height: 60px;
+    position: sticky;
+    overflow: hidden;
+}
+
+.itemFriends {
+    vertical-align: center;
+    width: 30%;
+    margin-left: 8%;
+}
+
+.itemDialogAva img {
+    height: 100%;
+}
+
+.name {
+    font-size: 80%;
 }
 

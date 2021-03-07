@@ -1,3 +1,22 @@
+
+.writeNews{
+    display: flex;
+    justify-content: left;
+    height: 35px;
+    width: 88%;
+    margin-left: 30px;
+}
+.watsNews{
+    width: 28%;
+    background-color: #282c34;
+    border-radius: 10px;
+    color: aliceblue;
+    box-shadow: none;
+    border: none;
+    margin-right: 10px;
+    padding-left: 1%;
+    font-size: medium;
+}
 .Blog {
     width: 97%;
     height: 1900px;

@@ -1,17 +1,12 @@
 import React from "react"
 import s from "./Profile.module.css"
-import MyBlog from "./MyBlog/MyBlog";
-import {addPostActionCreator, newPostTextActionCreator} from "../../redux/profileReducer";/*import action creator*/
+import MyBlogContainer from "./MyBlog/MyBlogContainer";
+import store from "../../redux/reduxStore";
+/*import action creator*/
 
 
 const Profile = (props) => {
-       let textNew = () => {/* вызываем функцию при клеке*/
-        props.dispatch(addPostActionCreator());
-    }
-    let newPostText = (e) => {
-        let text = e.target.value;/* let text = refNews.current.value;/!*достаем значение ссылки*!/*/
-        props.dispatch(newPostTextActionCreator(text));/*выводим значение переменной text*/
-    }
+
     return (<div className={s.Profile}>
             <div className={s.Profile_header_img}>
                 <img src="https://json.tv/public/images/general/2016/04/12/20160412234606-7129.jpg" alt=""/>
@@ -45,13 +40,9 @@ const Profile = (props) => {
                     </div>
                 </div>
             </div>
-            <div className={s.writeNews}>
-                <input value={props.posts.newPostText} onChange={newPostText}
-                       className={s.watsNews}/>{/*ссылка*/}
-                <button onClick={textNew}>send</button>
-                {/* отслеживаем клик по кнопке и вызываем функцию*/}
-            </div>
-            <MyBlog posts={props.posts}/> {/*отпраляем полученный пропс в компаненту*/}
+
+            <MyBlogContainer store={props.store}/>{/*posts={props.posts} dispatch={props.dispatch}*/}
+            {/*отпраляем полученный пропс в компаненту*/}
         </div>
     )
 }

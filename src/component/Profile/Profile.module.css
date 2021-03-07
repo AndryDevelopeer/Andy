@@ -3,46 +3,22 @@
     justify-content: space-between;
 }
 .Profile {
-
     width: 97%;
     height: 2500px;
     margin: 10px;
     color: white;
     font-size: 30px;
     padding-top: 1%;
-
-
 }
 
 .Profile_header_img {
     border-radius: 5px;
     height: 200px;
     overflow: hidden;
-
-
 }
-
 .Profile_header_img img {
     width: 100%;
     display: block;
-}
-.writeNews{
-    display: flex;
-    justify-content: left;
-    height: 35px;
-    width: 88%;
-    margin-left: 30px;
-}
-.watsNews{
-    width: 28%;
-    background-color: #282c34;
-    border-radius: 10px;
-    color: aliceblue;
-    box-shadow: none;
-    border: none;
-    margin-right: 10px;
-    padding-left: 1%;
-    font-size: medium;
 }
 
 .Ava {
@@ -57,11 +33,9 @@
     z-index: 1;
     align-content: center;
 }
-
 .Ava img {
     width: 100%;
 }
-
 .About {
     font-size: large;
     display: flex;
@@ -69,34 +43,23 @@
     margin-top: 20px;
     overflow: hidden;
     height: 7.5%;
-
 }
-
 .Name {
     padding-left: 30px;
     text-align: left;
     height: 200px;
     width: 37%;
-
 }
-
 .Name_User {
     font-size: x-large;
     padding-bottom: 10px;
-
 }
-
 .Name_Prof {
-
     padding-bottom: 5px;
-
 }
-
 .Name_Sity {
     color: #666;
     margin-bottom: 20px;
-
-
 }
 .Name_Activ{
     display: flex;
@@ -126,21 +89,15 @@ button {
     font-size: large;
     color: azure;
     background-color: #282c34;
-
 }
-
 .Exp {
-
     height: 200px;
     width: 37%;
-
 }
-
 .Exp div {
     margin-bottom: 10px;
     line-height: 35px;
 }
-
 .Exp span {
     color: #666;
 }

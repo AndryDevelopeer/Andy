@@ -13,5 +13,5 @@ let reducers = combineReducers({/*объеденяем редюссеры это
 })
 
 let store = createStore(reducers);/*создаем стор и передаем в него редюссеры*/
-
+window.store = store;/*global*/
 export default store;

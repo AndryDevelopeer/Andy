@@ -1,16 +1,16 @@
 import React from 'react'; /* импорт библиотеки реакт для синтаксиса JSX */
 import s from "./App.module.css"//импорт таблицы стилей как обьект S
 import Header from "./component/Header/Header";// импорт компоненты
-import Dialogs from "./component/Dialogs/Dialogs"//импорт компоненты
 import Profile from "./component/Profile/Profile";//импорт компоненты
 import {Route} from 'react-router-dom';// импорт библиотеки отрисовки по url экспортировалось не поумолчанию
 import Notification from "./component/Notification/Notification";//импорт компоненты
 import MyFriends from "./component/MyFriends/MyFriends";
+import DialogsContainer from "./component/Dialogs/DialogsContainer";
 //импорт компоненты
 
 
 const App = (props) => /* создаем компоненту которая возвращает разметку jsx*/ {
-    debugger;
+
     return (
         <div>
             <div className={s.App}>
@@ -18,16 +18,12 @@ const App = (props) => /* создаем компоненту которая в�
                 <div className={s.FirstPage}>
                     <div className={s.content}>
                         <Route path="/myProfile" render={() =>
-                            <Profile posts={props.state.profilePage} //прокидываем данные
-                                     dispatch={props.dispatch} /*прокидываем функции callback? *//>}/>
-                        {/*отпраляем полученный пропс в компаненту*/}
-                        { /*рендирится нужная компонента по url адресу */}
-
-                        <Route path="/message" render={() => <Dialogs dialogs={props.state.dialogsPage}
-                                                                      dispatch={props.dispatch}/>}/>
-                                                                      {/*рендирится нужная компонента по url адресу */}
-                        <Route path="/myFriends" render={() => <MyFriends
-                            friends={props.state.myFriendsArray}/>}/> {/*рендирится компонента по url адресу */}
+                            <Profile store={props.store}/>}/>
+                        <Route path="/message" render={() =>
+                            <DialogsContainer store={props.store}/>}/>{/*рендирится нужная компонента по url адресу */}
+                        <Route path="/myFriends" render={() =>
+                            <MyFriends
+                                friends={props.state.myFriendsArray}/>}/> {/*рендирится компонента по url адресу */}
 
                     </div>
                     <Notification friends={props.state.myFriendsArray}/>
