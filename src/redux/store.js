@@ -213,7 +213,7 @@ let store = {
             ]
         }// array with dialogs & messange
     },
-    _callSubscriber() {// obyavlyaem function dlya rendera Dom
+    _callSubscriber() {// функция для перерисовки всего DOMа
     },
     getState() {
         return (this._state)
@@ -225,7 +225,7 @@ let store = {
     },
     dispatch(action) {/* type:"TEXT"*/ // metod dlya rabotu so storom iz vne
         /*action eto objeckt u cotorogo esti svoistvo type and ....*/
-        this._state.profilePage = profileReducer(this._state.profilePage, action)/*!!!!!!!peredelat'!!!!!!*/
+        this._state.profilePage = profileReducer(this._state.profilePage, action)
         this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action)
         this._state.myFriendsArray = myFriendReducer(this._state.myFriendsArray, action)
         this._callSubscriber();

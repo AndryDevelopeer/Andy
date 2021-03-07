@@ -11,7 +11,7 @@ debugger;
             <div className={s.Blog_Date}>{p.date} {p.name}</div>
             <img className={s.img} src={p.img} alt=""/>
             <div className={s.Blog_Content}> {p.text}</div>
-            <div className={s.like} >Мне нравиться: <NavLink to={""} >{p.like}</NavLink></div>
+            <div className={s.like} >Мне нравиться: <NavLink to={"/myProfile"} >{p.like}</NavLink></div>
         </div>
     )
 

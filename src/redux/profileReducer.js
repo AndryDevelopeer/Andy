@@ -1,7 +1,7 @@
 const ADD_POST = "ADD-POST";
 const ADD_TEXT_POST = "ADD-TEXT-POST";
 
-let initialState=
+let initialState=/*для первоночальной отрисовки стэйта, после этого стэйт отрисовавыеться при изменении*/
 {
     newPostText: "New post",
         postArray:[
@@ -70,15 +70,15 @@ const profileReducer =(state=initialState,action)=>{
             state.newPostText = ("New post");
             return state
         case ADD_TEXT_POST:
-            state.newPostText = action.text;
+            state.newPostText = action.text;/*меняем текс при изменении в поле инпут*/
             return state;
         default:
-            return state;
+            return state;/*по умолчанию возвращаем стайт который к нам пришел без изменения*/
     }
 }
-/*sozdanie action dispatch*/
-export const newPostTextActionCreator = (text) => ({type: ADD_TEXT_POST, text: text});/*export from addTextPost in Profile*/
-/*esli function tol'ko returnit zna4enie ee sintscsis budet takoy*/
+/*создание экшенов для диспатча*/
+export const newPostTextActionCreator = (text) => ({type: ADD_TEXT_POST, text: text});/*from addTextPost in Profile*/
+/*если функция только возвращает значение ее можно записать так*/
 export const addPostActionCreator = () => ({type: ADD_POST}); /*export from addPost in Profile*/
-/*esli function tol'ko returnit zna4enie ee sintscsis budet takoy*/
+/*если функция только возвращает значение ее можно записать так*/
 export default profileReducer;

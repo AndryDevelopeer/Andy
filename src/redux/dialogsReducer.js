@@ -76,7 +76,7 @@ let initialState={
         message: ["Hi"]
     }
     ]
-};
+};/*для первоночальной отрисовки стэйта, после этого стэйт отрисовавыеться при изменении*/
 
 const dialogsReducer = (state=initialState, action) => {
 switch (action.type){

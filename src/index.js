@@ -12,8 +12,7 @@ let rerenderEntireTree = () => {
         <React.StrictMode>
             <BrowserRouter className={s.rout}>{/*отслеживает клики дороги*/}
                 <App state={store.getState()}
-                     dispatch={store.dispatch.bind(store)}
-                    // zabindili store, hardcode with store
+                     dispatch={store.dispatch.bind(store)}  // забиндили сторе,(жесток захардкодили)
                 />{/*отправляем аргумент с обьектом внутри в компоненту*/}
             </BrowserRouter>
         </React.StrictMode>,
