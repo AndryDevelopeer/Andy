@@ -2,6 +2,7 @@ import React from "react"
 import s from "./Profile.module.css"
 import MyBlogContainer from "./MyBlog/MyBlogContainer";
 import store from "../../redux/reduxStore";
+import {NavLink} from "react-router-dom";
 /*import action creator*/
 
 
@@ -22,7 +23,7 @@ const Profile = (props) => {
                     <div className={s.Name_Prof}>Electrical Engineer</div>
                     <div className={s.Name_Sity}>Russia Chelyabinsk City</div>
                     <div className={s.Name_Activ}>
-                        <button className={s.Name_Message}> Message</button>
+                        <NavLink to={"message"}> <button className={s.Name_Message}> Message</button> </NavLink>
                         <button className={s.Name_Add} onClick={() => {
                             alert("Нельзя добавить себя в друзья")
                         }}> +

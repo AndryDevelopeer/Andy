@@ -18,7 +18,7 @@ const Notification = (props) => {
     )
     return (
 
-        <div>
+        <div className={s.Notification}>
             <NavLink to={"/news"}><h3>News</h3></NavLink>
             <div>{newsFriends}</div>
 

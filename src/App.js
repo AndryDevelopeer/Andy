@@ -24,7 +24,6 @@ const App = (props) => /* создаем компоненту которая в�
                         <Route path="/myFriends" render={() =>
                             <MyFriends
                                 friends={props.state.myFriendsArray}/>}/> {/*рендирится компонента по url адресу */}
-
                     </div>
                     <Notification friends={props.state.myFriendsArray}/>
                 </div>

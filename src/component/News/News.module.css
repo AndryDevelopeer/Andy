@@ -1,19 +1,13 @@
 .News{
     color: azure;
-    width: 250px;
     height: 150px;
-    margin: 10px 10px 0 0;
     font-size: 20px;
     min-width: 100px;
 }
 .News_item{
-
-    width: 98%;
-    height: 180px   ;
-
+    height: 180px;
 }
 .News_item_User{
-
     display: flex;
     justify-content: space-between;
     align-items: center;

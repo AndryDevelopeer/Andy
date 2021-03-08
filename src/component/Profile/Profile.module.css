@@ -37,12 +37,13 @@
     width: 100%;
 }
 .About {
-    font-size: large;
+    font-size: medium;
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
     overflow: hidden;
     height: 7.5%;
+    min-height: 210px;
 }
 .Name {
     padding-left: 30px;
@@ -59,10 +60,11 @@
 }
 .Name_Sity {
     color: #666;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .Name_Activ{
     display: flex;
+    min-width: 150px;
 }
 .Name_Message {
     margin-right: 10px;
@@ -73,6 +75,8 @@
     font-size: medium;
     color: azure;
     background-color: #282c34;
+    min-width: 100px;
+
 }
 button:hover{
     color: coral;
@@ -96,7 +100,7 @@ button {
 }
 .Exp div {
     margin-bottom: 10px;
-    line-height: 35px;
+    line-height: 150%;
 }
 .Exp span {
     color: #666;

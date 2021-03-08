@@ -1,5 +1,11 @@
+@media screen and (max-width: 450px) {
+    /* стили для телефонов - начало */
+   .span{
+       visibility: hidden;
+   }
+}
 .span{
-    color:coral ;
+    color: azure ;
 }
 .Header {
     position: sticky;
@@ -16,7 +22,7 @@
 .Header_search {
     display: flex;
     justify-content: space-between;
-    width: 40%;
+    width: 15%;
 }
 
 .Header_search_img {
@@ -43,11 +49,11 @@
 
 .Header_nav a {
     text-decoration: none;
-    color: azure;
+    color: coral;
 }
 
 .Header_nav a:hover {
-    color: coral;
+    color: azure;
 }
 
 
@@ -57,7 +63,6 @@
 
 .Header_nav_item {
     margin: auto 20px;
-
 }
 
 .Header_more_button {
