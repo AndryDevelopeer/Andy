@@ -3,6 +3,9 @@
     .content{
         min-width: 420px;
     }
+    .screen {
+     width: 100vm;
+    }
     }
 @media screen and (max-width: 420px) {
     /* стили для телефонов - начало */
@@ -26,7 +29,6 @@
     font-size: 25px;
     background-color: black;
     color:white;
-
 }
 a{
     text-decoration: none;
@@ -40,11 +42,7 @@ body {
     display: flex;
     justify-content: space-between;
 }
-.content{
-    width: 75%;
 
-    margin: 0 7% 0 2%;
-}
 a:hover {
     color: coral;
 }

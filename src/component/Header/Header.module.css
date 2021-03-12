@@ -2,7 +2,11 @@
     /* стили для телефонов - начало */
    .span{
        visibility: hidden;
+
    }
+    .Header{
+        width: 450px;
+    }
 }
 .span{
     color: azure ;
@@ -17,12 +21,13 @@
     background-color: #282c34;
     color: azure;
     z-index: 2;
+    
 }
 
 .Header_search {
     display: flex;
     justify-content: space-between;
-    width: 15%;
+
 }
 
 .Header_search_img {

@@ -3,7 +3,7 @@
     justify-content: space-between;
 }
 .Profile {
-    width: 97%;
+    width: 100%;
     height: 2500px;
     margin: 10px;
     color: white;
@@ -28,7 +28,7 @@
     height: 150px;
     border-radius: 150px;
     box-shadow: 0 0 20px 15px black;
-    margin: -80px 0px 0px 15px;
+    margin: -80px 0 0 15px;
     position: relative;
     z-index: 1;
     align-content: center;

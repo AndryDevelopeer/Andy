@@ -12,7 +12,7 @@ import DialogsContainer from "./component/Dialogs/DialogsContainer";
 const App = (props) => /* создаем компоненту которая возвращает разметку jsx*/ {
 
     return (
-        <div>
+        <div className={s.screen}>
             <div className={s.App}>
                 <Header/>{/*компонента*/}
                 <div className={s.FirstPage}>

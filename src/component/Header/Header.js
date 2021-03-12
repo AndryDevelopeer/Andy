@@ -18,7 +18,7 @@ const Header = () => {
                 {/*<div className={s.Header_nav_item}><NavLink to="" activeClassName={"s.activeLink"}>Search</NavLink></div>*/}
             </div>
             <div className={s.Header_search}>
-                <div className={s.Header_search_img}>
+                <div >
                     <span className={s.span} onClick={friendYourself}> TWENTY TWO</span>
                 </div>
             </div>
