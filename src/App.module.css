@@ -1,8 +1,34 @@
+@media screen and (max-width: 460px) {
+    /* стили для телефонов - начало */
+    .content{
+        min-width: 420px;
+    }
+    .screen {
+     width: 100vm;
+    }
+    }
+@media screen and (max-width: 420px) {
+    /* стили для телефонов - начало */
+    .content{
+        min-width: 390px;
+    }
+}
+@media screen and (max-width: 380px) {
+    /* стили для телефонов - начало */
+    .content{
+        min-width: 350px;
+    }
+}
+@media screen and (max-width: 365px) {
+    /* стили для телефонов - начало */
+    .content{
+        min-width: 335px;
+    }
+}
 .App {
     font-size: 25px;
     background-color: black;
     color:white;
-
 }
 a{
     text-decoration: none;
@@ -16,9 +42,7 @@ body {
     display: flex;
     justify-content: space-between;
 }
-.content{
-    width: 75%;
-}
+
 a:hover {
     color: coral;
 }

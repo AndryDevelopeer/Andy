@@ -1,2 +1,15 @@
-/node_module
-/build
+<<<<<<< HEAD
+
+=======
+/node_modules/
+/build/
+.eslintcache 
+README.md
+debug.log
+
+package-lock.json 
+
+package.json 
+
+.idea 
+>>>>>>> 7149fdb87ad68055a6225197c3e7a421bb4f0ade

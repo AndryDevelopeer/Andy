@@ -1,0 +1,108 @@
+.unread {
+    text-align: left;
+    font-size: small;
+}
+
+.content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.contact {
+    height: auto;
+    width: 350px;
+    margin-left: 4%;
+    min-width: 200px;
+    padding: 1%;
+}
+
+.contact :hover {
+    color: coral;
+}
+
+.dialogs {
+    height: 95%;
+    width: 65%;
+    border: #282c34 3px solid;
+    margin: 1%;
+    overflow: auto;
+    border-radius: 10px;
+}
+
+.message {
+    margin: 2%;
+    width: 97.5%;
+    height: 430px;
+    overflow: auto;
+}
+
+.messageArea {
+    display: flex;
+    border-radius: 5px;
+    margin: 1%;
+    width: 98%;
+    height: 40px;
+}
+
+.input {
+    border-radius: 5px;
+    margin: 0.5%;
+    width: 91%;
+    height: auto;
+    font-size: large;
+    background-color: #aaa;
+    border: 3px solid #222;
+}
+
+.button {
+    border-radius: 5px;
+    margin: 0.5%;
+    width: 8%;
+    height: auto;
+    font-size: large;
+}
+
+.nameItem {
+    font-size: x-large;
+}
+
+.messageItem {
+    margin-top: 1%;
+    font-size: large;
+}
+
+.itemDialog {
+    font-size: 85%;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    justify-content: flex-start;
+    align-self: center;
+    height: 20%;
+}
+
+.itemDialogAva {
+    border-radius: 40px;
+    margin: 0;
+    width: 60px;
+    height: 60px;
+    position: sticky;
+    overflow: hidden;
+}
+
+.itemFriends {
+    vertical-align: center;
+    width: 30%;
+    margin-left: 8%;
+}
+
+.itemDialogAva img {
+    height: 100%;
+}
+
+.name {
+    font-size: 80%;
+}
+

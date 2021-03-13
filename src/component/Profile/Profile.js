@@ -1,21 +1,12 @@
 import React from "react"
 import s from "./Profile.module.css"
-import MyBlog from "./MyBlog/MyBlog";
+import MyBlogContainer from "./MyBlog/MyBlogContainer";
+import store from "../../redux/reduxStore";
+import {NavLink} from "react-router-dom";
+/*import action creator*/
 
 
 const Profile = (props) => {
-
-    let refNews = React.createRef();/*создаем ссылку*/
-
-    let textNew = () => {/* вызываем функцию при клеке*/
-        /* let text = refNews.current.value;/!*достаем значение ссылки*!/*/
-        props.addPosts();/*выводим значение переменной text*/
-    }
-    let newPostText = () => {
-        let text = refNews.current.value;
-        props.newPostText(text);
-
-    }
 
     return (<div className={s.Profile}>
             <div className={s.Profile_header_img}>
@@ -32,7 +23,7 @@ const Profile = (props) => {
                     <div className={s.Name_Prof}>Electrical Engineer</div>
                     <div className={s.Name_Sity}>Russia Chelyabinsk City</div>
                     <div className={s.Name_Activ}>
-                        <button className={s.Name_Message}> Message</button>
+                        <NavLink to={"message"}> <button className={s.Name_Message}> Message</button> </NavLink>
                         <button className={s.Name_Add} onClick={() => {
                             alert("Нельзя добавить себя в друзья")
                         }}> +
@@ -50,17 +41,10 @@ const Profile = (props) => {
                     </div>
                 </div>
             </div>
-            <div className={s.writeNews}>
-                <input ref={refNews} value={props.newPost} onChange={newPostText}
-                       className={s.watsNews}/>{/*ссылка*/}
-                <button onClick={textNew}>send</button>
-                {/* отслеживаем клик по кнопке и вызываем функцию*/}
-            </div>
-            <MyBlog array={props.array}/> {/*отпраляем полученный пропс в компаненту*/}
+
+            <MyBlogContainer store={props.store}/>{/*posts={props.posts} dispatch={props.dispatch}*/}
+            {/*отпраляем полученный пропс в компаненту*/}
         </div>
-
     )
-
-
 }
 export default Profile;

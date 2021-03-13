@@ -1,3 +1,22 @@
+
+.writeNews{
+    display: flex;
+    justify-content: left;
+    height: 35px;
+    width: 88%;
+    margin-left: 30px;
+}
+.watsNews{
+    width: 28%;
+    background-color: #282c34;
+    border-radius: 10px;
+    color: aliceblue;
+    box-shadow: none;
+    border: none;
+    margin-right: 10px;
+    padding-left: 1%;
+    font-size: medium;
+}
 .Blog {
     width: 97%;
     height: 1900px;
@@ -5,4 +24,28 @@
 margin-left: 0.5%;
 
 }
+.img {
+    width: 101%;
+    border-radius: 5px;
 
+}
+
+.Blog_Post {
+    margin: 40px 0 40px 25px;
+}
+
+.Blog_Date {
+    font-size: large;
+    margin: 10px 0 10px 10px;
+
+}
+
+.Blog_Content {
+    font-size: medium;
+    margin: 10px 0 10px 10px;
+    padding-top: 30px;
+}
+.like{
+    text-align: right;
+    font-size: large;
+}

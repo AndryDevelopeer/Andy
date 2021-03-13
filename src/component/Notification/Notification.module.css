@@ -1,3 +1,13 @@
+@media screen and (max-width: 450px) {
+    /* стили для телефонов - начало */
+    .Notification{
+        visibility: hidden;
+    }
+}
+.Notification{
+    width: 20%;
+    margin-left: 5%;
+}
 .News{
     color: azure;
     width: 250px;
@@ -7,13 +17,10 @@
     min-width: 100px;
 }
 .News_item{
-
     width: 98%;
-    height: 180px   ;
-
+    height: 180px;
 }
 .News_item_User{
-
     display: flex;
     justify-content: space-between;
     align-items: center;

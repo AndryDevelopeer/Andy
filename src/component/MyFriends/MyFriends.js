@@ -9,10 +9,10 @@ const MyFriends = (props) => {
     let friend = props.friends.map(f =>
         <NavLink to={"myFriends"}>
             <div className={s.itemDialog}>
-                <div className={s.itemDialogAva}>
-                    <img src={f.ava} alt=""/>
-                </div>
                 <div className={s.itemFriends}>
+                    <div className={s.itemDialogAva}>
+                        <img src={f.ava} alt=""/>
+                    </div>
                     <div className={s.itemDialogName}>{f.name}</div>
                     <div className={s.message}>{f.unread}</div>
                     <div className={s.message}>{f.work}</div>
