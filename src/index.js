@@ -7,7 +7,7 @@ import s from "./index.css"
 
 
 let rerenderEntireTree = () => {
-//sd
+
     ReactDOM.render(
         <React.StrictMode>
             <BrowserRouter className={s.rout}>{/*отслеживает клики дороги*/}
