@@ -1,0 +1,25 @@
+.img {
+    width: 101%;
+    border-radius: 5px;
+
+}
+
+.Blog_Post {
+    margin: 40px 0 40px 25px;
+}
+
+.Blog_Date {
+    font-size: large;
+    margin: 10px 0 10px 10px;
+
+}
+
+.Blog_Content {
+    font-size: medium;
+    margin: 10px 0 10px 10px;
+    padding-top: 30px;
+}
+.like{
+    text-align: right;
+    font-size: large;
+}
