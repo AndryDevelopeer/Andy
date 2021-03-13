@@ -24,7 +24,7 @@ const MyBlogContainer = (props) => {
             <div className={s.like}>Мне нравиться: <NavLink to={"/myProfile"}>{p.like}</NavLink></div>
         </div>
     )
-
+//sdfsdf
     return (
         <MyBlog textNew={textNew} newPostText={newPostText} posts={posts} inputText={state.profilePage.newPostText}/>)
 }
