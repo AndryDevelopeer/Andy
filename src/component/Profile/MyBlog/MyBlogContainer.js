@@ -9,7 +9,7 @@ import {connect} from "react-redux";
 let mapStateToProps=(state)=>{
     return{
         posts:state.profilePage.postArray.map(p =>
-            <div className={s.Blog_Post}>{/*вызываем метод массива map обьектка props сосвойством array */}
+            <div className={s.Blog_Post} key={p.id}>{/*вызываем метод массива map обьектка props сосвойством array */}
                 <div className={s.Blog_Date}>{p.date} {p.name}</div>
                 <img className={s.img} src={p.img} alt=""/>
                 <div className={s.Blog_Content}> {p.text}</div>
