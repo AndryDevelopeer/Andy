@@ -1,7 +1,7 @@
 const ADD_NEW_MESSAGE = "ADD-NEW-MESSAGE";
 const SEND_MESSAGE = "SEND-MESSAGE";
 
-let initialState={
+let initialState = {
     newTextMessage: " ",
     sendTextMessage: [
         {id: 1, message: "HI"},
@@ -78,32 +78,41 @@ let initialState={
     ]
 };/*для первоночальной отрисовки стэйта, после этого стэйт отрисовавыеться при изменении*/
 
-const dialogsReducer = (state=initialState, action) => {
-switch (action.type){
-    case ADD_NEW_MESSAGE:
-        state.newTextMessage = action.text;
-        return state;
-    case SEND_MESSAGE:
-        let text = state.newTextMessage;
-        let id = state.sendTextMessage.length
-        state.sendTextMessage.push({id: id + 1, message: (text)});
-        state.newTextMessage = (" ");
-        return state;
-    default:
-        return state;
-}
- /*   /!* type:"TEXT"*!/ // metod dlya rabotu so storom iz vne
-    /!*action eto objeckt u cotorogo esti svoistvo type and ....*!/
-    if (action.type === ADD_NEW_MESSAGE) {/!* zamena simvolow esly u prihodyashego dispatch
-        type equals "ADD_NEW-MESSAGE" to delaem eto*!/
-        state.newTextMessage = action.text;/!* to 4to prishlo v action s type text*!/
-    } else if (action.type === SEND_MESSAGE) {
-        let text = state.newTextMessage;
-        let id = state.sendTextMessage.length
-        state.sendTextMessage.push({id: id + 1, message: (text)});/!* to 4to prishlo v action s type text*!/
-        state.newTextMessage = (" ");
+const dialogsReducer = (state = initialState, action) => {
+    debugger
+    switch (action.type) {
+        case ADD_NEW_MESSAGE: {
+            let stateCopy = {...state}
+            stateCopy.newTextMessage = {...state.newTextMessage}
+            stateCopy.newTextMessage = action.text;
+            return stateCopy;
+        }
+
+        case SEND_MESSAGE: {
+            let message={id: state.sendTextMessage.length+1,
+                message:(state.newTextMessage)}
+            let stateCopy = {...state};
+            stateCopy.newTextMessage={...state.newTextMessage};
+            stateCopy.sendTextMessage=[...state.sendTextMessage];
+            stateCopy.sendTextMessage.push(message);
+            stateCopy.newTextMessage = ("");
+            return stateCopy;
+        }
+        default:
+            return state;
     }
-    return state;*/
+    /*   /!* type:"TEXT"*!/ // metod dlya rabotu so storom iz vne
+       /!*action eto objeckt u cotorogo esti svoistvo type and ....*!/
+       if (action.type === ADD_NEW_MESSAGE) {/!* zamena simvolow esly u prihodyashego dispatch
+           type equals "ADD_NEW-MESSAGE" to delaem eto*!/
+           state.newTextMessage = action.text;/!* to 4to prishlo v action s type text*!/
+       } else if (action.type === SEND_MESSAGE) {
+           let text = state.newTextMessage;
+           let id = state.sendTextMessage.length
+           state.sendTextMessage.push({id: id + 1, message: (text)});/!* to 4to prishlo v action s type text*!/
+           state.newTextMessage = (" ");
+       }
+       return state;*/
 }
 
 export const newMessageTextActionCreator = (text) => ({type: ADD_NEW_MESSAGE, text: text});/* obnovlenie simbol*/

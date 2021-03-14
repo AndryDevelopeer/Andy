@@ -3,9 +3,9 @@ import s from "./App.module.css"//импорт таблицы стилей ка�
 import Header from "./component/Header/Header";// импорт компоненты
 import Profile from "./component/Profile/Profile";//импорт компоненты
 import {Route} from 'react-router-dom';// импорт библиотеки отрисовки по url экспортировалось не поумолчанию
-import Notification from "./component/Notification/Notification";//импорт компоненты
-import MyFriends from "./component/MyFriends/MyFriends";
 import DialogsContainer from "./component/Dialogs/DialogsContainer";
+import MyFriendsContainer from "./component/MyFriends/MyFriendsContainer";
+import NotificationContainer from "./component/Notification/NotificationContainer";
 //импорт компоненты
 
 
@@ -17,15 +17,11 @@ const App = (props) => /* создаем компоненту которая в�
                 <Header/>{/*компонента*/}
                 <div className={s.FirstPage}>
                     <div className={s.content}>
-                        <Route path="/myProfile" render={() =>
-                            <Profile store={props.store}/>}/>
-                        <Route path="/message" render={() =>
-                            <DialogsContainer store={props.store}/>}/>{/*рендирится нужная компонента по url адресу */}
-                        <Route path="/myFriends" render={() =>
-                            <MyFriends
-                                friends={props.state.myFriendsArray}/>}/> {/*рендирится компонента по url адресу */}
+                        <Route path="/myProfile" render={() =><Profile/>}/>{/*рендирится нужная компонента по url адресу */}
+                        <Route path="/message" render={() =><DialogsContainer/>}/>{/*рендирится нужная компонента по url адресу */}
+                        <Route path="/myFriends" render={() =><MyFriendsContainer/>}/> {/*рендирится компонента по url адресу */}
                     </div>
-                    <Notification friends={props.state.myFriendsArray}/>
+                    <NotificationContainer/>
                 </div>
             </div>
         </div>

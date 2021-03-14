@@ -232,7 +232,7 @@ let store = {
     }/*obshiy metod dly vuzova*/
 }
 
-window.store = store;/*global*/
+
 export default store;
 
 // from xubuntu 02.03.2021 v2

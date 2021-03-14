@@ -52,12 +52,12 @@ let initialState=/*для первоночальной отрисовки стэ
 
 const profileReducer =(state=initialState,action)=>{
     switch (action.type) {/*otsle*/
-        case ADD_POST:
+        case ADD_POST:{
             let today = new Date();
             let dd = String(today.getDate()).padStart(2, '0');
             let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
             let yyyy = today.getFullYear();
-            today = dd + '.' + mm + '.' + yyyy;
+            today = dd + '.' + mm + '.' + yyyy;//получаем дату
             let newPost = {
                 id: 2,
                 date: today,
@@ -66,14 +66,20 @@ const profileReducer =(state=initialState,action)=>{
                 like: 0,
                 text: ""
             };
-            state.postArray.unshift(newPost);
-            state.newPostText = ("New post");
-            return state
-        case ADD_TEXT_POST:
-            state.newPostText = action.text;/*меняем текс при изменении в поле инпут*/
-            return state;
-        default:
+            let stateCopy={...state};//делаем поверностную копию обьекта
+            stateCopy.postArray=[...state.postArray];//делаемглубокую копию обьекта
+            stateCopy.postArray.unshift(newPost);//пушим в копию массива обьект
+            stateCopy.newPostText = ("");//зануляем инпут
+            return stateCopy}//возвращаем копию
+
+        case ADD_TEXT_POST:{
+            let stateCopy={...state};//делаем поверностную копию обьекта
+            stateCopy.newPostText={...state.newPostText}//делаем глубокую копию обьекта
+            stateCopy.newPostText = action.text;/*меняем текс при изменении в поле инпут*/
+            return stateCopy;}//возвращаем копию
+        default:{
             return state;/*по умолчанию возвращаем стайт который к нам пришел без изменения*/
+            }
     }
 }
 /*создание экшенов для диспатча*/

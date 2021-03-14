@@ -11,11 +11,10 @@ const Dialogs = (props) => {
                 <h3>Message</h3>
                 {props.dialogsElements}
             </div>
-            <MessageContainer store={props.store}/>
+            <MessageContainer/>
         </div>
     )
 }
-
 
 export default Dialogs;
 

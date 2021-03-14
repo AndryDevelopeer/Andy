@@ -85,7 +85,6 @@ let initialState=[
 
 ];/*для первоночальной отрисовки стэйта, после этого стэйт отрисовавыеться при изменении*/
 const myFriendReducer=(state=initialState,action)=>{
-
     return state;
 }
 export default myFriendReducer;

@@ -12,7 +12,7 @@ const ProfileContainer = (props) => {
         let text = e.target.value;/* let text = refNews.current.value;/!*достаем значение ссылки*!/*/
         props.dispatch(newPostTextActionCreator(text));/*выводим значение переменной text*/
     }
-    return ( <Profile   />
+    return ( <Profile/>
     )
 }
 export default ProfileContainer;
