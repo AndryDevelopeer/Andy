@@ -79,7 +79,7 @@ let initialState = {
 };/*для первоночальной отрисовки стэйта, после этого стэйт отрисовавыеться при изменении*/
 
 const dialogsReducer = (state = initialState, action) => {
-    debugger
+
     switch (action.type) {
         case ADD_NEW_MESSAGE: {
             let stateCopy = {...state}

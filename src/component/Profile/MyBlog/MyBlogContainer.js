@@ -21,12 +21,8 @@ let mapStateToProps=(state)=>{
 }
 let mapDispatchToProps=(dispatch)=>{
     return{
-        textNew: ()=>{
-            dispatch(addPostActionCreator())
-        },
-        newPostText:(text)=>{
-        dispatch(newPostTextActionCreator(text))
-        }
+        textNew: ()=>dispatch(addPostActionCreator()),
+        newPostText:(text)=>dispatch(newPostTextActionCreator(text))
     }
 }
 const MyBlogContainer =connect(mapStateToProps,mapDispatchToProps)(MyBlog);//перерисовывает компоненты

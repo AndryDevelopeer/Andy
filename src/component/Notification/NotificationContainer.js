@@ -6,7 +6,7 @@ import s from "./Notification.module.css";
 const mapStateToProps=(state)=>{
     return{
         newsFriends:state.myFriendsArray.map(n =>
-            <NavLink to=" ">
+            <NavLink to=" " key={n.id}>
                 <div className={s.News}>
                     <div className={s.News_item}>
                         <div className={s.News_item_User}>

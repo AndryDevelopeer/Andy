@@ -3,11 +3,10 @@ import React from "react";
 
 /*презинтационнная компонента*/
 const Message = (props) => {
-/* вся логика в MessageContainer*/
-    let newPostElement=React.createRef();
-    let addMessage =()=>{
-        let text=newPostElement.current.value;
-        props.addMessage(text)
+    /* вся логика в MessageContainer*/
+    let changeMessage = (e) => {
+        let text = e.target.value;//берем значение инпут таргет
+        props.addMessage(text)//вызываем адмесадж из пропсов
     }
     return (
         <div className={s.dialogs}>
@@ -15,9 +14,10 @@ const Message = (props) => {
                 {props.text}
             </div>
             <div className={s.messageArea}>
-                <input onChange={addMessage} className={s.input} ref={newPostElement}//при смене значения вызываем функцию
+                <input onChange={changeMessage} className={s.input} //при смене значения вызываем функцию
                        value={props.newTextMessage}/>
-                <button onClick={props.sendMessage} className={s.button}/>{/*при клике вызываем функцию*/}
+                <button onClick={props.sendMessage} className={s.button}/>
+                {/*при клике вызываем функцию*/}
                 {/*вызывает функции при клике*/}
             </div>
         </div>

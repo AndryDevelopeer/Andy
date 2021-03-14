@@ -1,7 +1,6 @@
 import React from "react"
 import s from "./Profile.module.css"
 import MyBlogContainer from "./MyBlog/MyBlogContainer";
-import store from "../../redux/reduxStore";
 import {NavLink} from "react-router-dom";
 /*import action creator*/
 

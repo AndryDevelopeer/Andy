@@ -7,7 +7,7 @@ import {connect} from "react-redux";
 const mapStateToProps=(state)=>{
     return  {
         dialogsElements:state.dialogsPage.dialogs.map(d =>
-            <NavLink to={"message"}>
+            <NavLink to={"message"} key={d.id}>
                 <div className={s.itemDialog}>
                     <div className={s.itemDialogAva}><img src={d.ava} alt=""/></div>
                     <div className={s.itemFriends}>

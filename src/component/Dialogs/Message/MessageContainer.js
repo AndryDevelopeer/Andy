@@ -10,7 +10,7 @@ const mapStateToProps=(state)=>{
     return {
         newTextMessage:state.dialogsPage.newTextMessage,
         text:state.dialogsPage.sendTextMessage.map(p =>/*достаем список собеседников из проспсов*/
-            <div className={s.text}>{p.message}</div>
+            <div className={s.text} key={p.id}>{p.message}</div>
         )
     }
 }
