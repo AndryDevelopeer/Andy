@@ -41,7 +41,7 @@ const Profile = (props) => {
                 </div>
             </div>
 
-            <MyBlogContainer store={props.store}/>{/*posts={props.posts} dispatch={props.dispatch}*/}
+            <MyBlogContainer/>{/*posts={props.posts} dispatch={props.dispatch}*/}
             {/*отпраляем полученный пропс в компаненту*/}
         </div>
     )

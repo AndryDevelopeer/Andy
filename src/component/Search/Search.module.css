@@ -1,0 +1,53 @@
+.container {
+
+}
+
+.users {
+    display: flex;
+    justify-content: space-between;
+    margin: 4%;
+}
+
+.users_img {
+    width: 90px;
+    height: 90px;
+    border-radius: 45px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.users_img img {
+    height: 100%;
+}
+
+.users_action {
+    text-align: left;
+    width: 100px;
+}
+
+.users_item {
+    text-align: left;
+    width: 150px;
+}
+
+.users_location {
+    text-align: right;
+    width: 150px;
+}
+
+
+.users_name {
+    font-size: large;
+}
+
+.users_about {
+    font-size: small;
+}
+
+.users_town {
+    font-size: large;
+}
+
+.users_years {
+    font-size: small;
+}

@@ -5,7 +5,7 @@ import MyFriends from "./MyFriends";
 
 
 const mapStateToProps=(state)=>{
-debugger
+
     return{
         friend:state.myFriendsArray.map(f =>
             <NavLink to={"myFriends"}>

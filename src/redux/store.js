@@ -54,6 +54,7 @@ let store = {
         myFriendsArray: [
             {
                 id: "0",
+                sity: "Chelyabinsk",
                 name: "Andrew Gerasimenko",
                 work: "ЧМЗ",
                 years: "45 лет",

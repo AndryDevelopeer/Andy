@@ -6,6 +6,7 @@ import {Route} from 'react-router-dom';// импорт библиотеки от
 import DialogsContainer from "./component/Dialogs/DialogsContainer";
 import MyFriendsContainer from "./component/MyFriends/MyFriendsContainer";
 import NotificationContainer from "./component/Notification/NotificationContainer";
+import SearchContainer from "./component/Search/SearchContainer";
 //импорт компоненты
 
 
@@ -17,9 +18,13 @@ const App = (props) => /* создаем компоненту которая в�
                 <Header/>{/*компонента*/}
                 <div className={s.FirstPage}>
                     <div className={s.content}>
-                        <Route path="/myProfile" render={() =><Profile/>}/>{/*рендирится нужная компонента по url адресу */}
-                        <Route path="/message" render={() =><DialogsContainer/>}/>{/*рендирится нужная компонента по url адресу */}
-                        <Route path="/myFriends" render={() =><MyFriendsContainer/>}/> {/*рендирится компонента по url адресу */}
+                        <Route path="/myProfile"
+                               render={() => <Profile/>}/>{/*рендирится нужная компонента по url адресу */}
+                        <Route path="/message"
+                               render={() => <DialogsContainer/>}/>{/*рендирится нужная компонента по url адресу */}
+                        <Route path="/myFriends" render={() => <MyFriendsContainer/>}/>
+                        <Route path="/search"
+                               render={() => <SearchContainer/>}/>{/*рендирится компонента по url адресу */}
                     </div>
                     <NotificationContainer/>
                 </div>

@@ -1,22 +1,25 @@
-.itemDialog{
+.itemDialog {
     font-size: 85%;
     display: flex;
     align-items: center;
-    margin:4% 0 4% 0;
+    margin: 4% 0 4% 0;
     justify-content: flex-start;
     align-self: center;
     height: 20%;
 }
-.message{
+
+.message {
     text-align: left;
     font-size: small;
 }
-.about{
+
+.about {
 
     width: 40%;
     font-size: 62%;
 }
-.itemDialogAva{
+
+.itemDialogAva {
     border-radius: 40px;
     margin: 10px 0 0 0;
     width: 80px;
@@ -25,18 +28,21 @@
     overflow: hidden;
 
 }
-.itemFriends{
+
+.itemFriends {
     vertical-align: center;
     width: 30%;
     margin-left: 5%;
     min-width: 200px;
 
 }
-.itemDialogName{
-    font-size:100%;
-     text-align: left;
+
+.itemDialogName {
+    font-size: 100%;
+    text-align: left;
 
 }
-.itemDialogAva img{
+
+.itemDialogAva img {
     height: 100%;
 }

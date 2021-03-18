@@ -1,12 +1,12 @@
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 460px) {
     /* стили для телефонов - начало */
    .span{
-       visibility: hidden;
+       display: none;
 
    }
-    .Header{
+    /*.Header{
         width: 450px;
-    }
+    }*/
 }
 .span{
     color: azure ;
@@ -21,6 +21,8 @@
     background-color: #282c34;
     color: azure;
     z-index: 2;
+    align-items: center;
+    text-align: center;
     
 }
 
@@ -67,7 +69,7 @@
 }
 
 .Header_nav_item {
-    margin: auto 20px;
+    margin: auto 10px;
 }
 
 .Header_more_button {
