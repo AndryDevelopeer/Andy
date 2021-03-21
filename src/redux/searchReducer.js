@@ -2,14 +2,26 @@ const SET_USERS = "SET-USERS";
 const FOLLOW = "FOLLOW";
 const UNFOLLOW = "UNFOLLOW";
 const SHOW_MORE = "SHOW-MORE";
+const SET_CURRENT_PAGE="SET-CURRENT-PAGE";
+const SET_TOTAL_USERS="SET-TOTAL-USERS"
 let initialState = {
-    users: []
-};/*для первоночальной отрисовки стэйта, после этого стэйт отрисовавыеться при изменении*/
+    users: [],
+    pageSize:100,
+    totalUsersCount:40,
+    currentPage:1
 
+};/*для первоночальной отрисовки стэйта, после этого стэйт отрисовавыеться при изменении*/
+debugger
 const searchReducer = (state = initialState, action) => {
     switch (action.type) {
         case  SET_USERS: {
-            return {...state, users: [/*...state.users,*/ ...action.users]}//копистэйт, коп массива стэйт+копия массива акшен
+            return {...state, users:action.users}//копистэйт, коп массива стэйт+копия массива акшен
+        }
+        case  SET_CURRENT_PAGE: {
+             return {...state, currentPage: action.currentPage}//копистэйт, коп массива стэйт+копия массива акшен
+        }
+        case  SET_TOTAL_USERS: {
+             return {...state, totalUsersCount: action.totalUsersCount}//копистэйт, коп массива стэйт+копия массива акшен
         }
         case SHOW_MORE: {
             let stateCopy = {...state};//делаем поверностную копию обьекта
@@ -46,6 +58,8 @@ const searchReducer = (state = initialState, action) => {
 }
 /*создание экшенов для диспатча*/
 export const setUsersAC = (users) => ({type: SET_USERS, users});
+export const setCurrentPageAC = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
+export const totalUsersCountAC = (totalUsersCount) => ({type: SET_TOTAL_USERS, totalUsersCount});
 export const followFriendsAC = (userId) => ({type: FOLLOW, userId});
 export const unfollowFriendsAC = (userId) => ({type: UNFOLLOW, userId});
 /*если функция только возвращает значение ее можно записать так*/

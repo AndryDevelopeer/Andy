@@ -9,7 +9,10 @@
 .users_h3 {
     margin-left: 4%;
 }
-
+.selectedPage{
+    font-weight: bold;
+    color: coral;
+}
 .users_img {
     width: 90px;
     height: 90px;
