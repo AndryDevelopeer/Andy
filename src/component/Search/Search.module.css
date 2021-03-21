@@ -1,11 +1,13 @@
-.container {
-
-}
 
 .users {
     display: flex;
     justify-content: space-between;
-    margin: 4%;
+    margin: 3%;
+    width: 600px;
+}
+
+.users_h3 {
+    margin-left: 4%;
 }
 
 .users_img {
@@ -13,7 +15,7 @@
     height: 90px;
     border-radius: 45px;
     overflow: hidden;
-    margin: 0 auto;
+
 }
 
 .users_img img {
@@ -21,21 +23,22 @@
 }
 
 .users_action {
-    text-align: left;
-    width: 100px;
+    text-align: center;
+    width: 90px;
+
 }
 
 .users_item {
     text-align: left;
-    width: 150px;
+    width: 90px;
+
 }
 
 .users_location {
-    text-align: right;
-    width: 150px;
+
+    text-align: left;
+    width: 80px;
 }
-
-
 .users_name {
     font-size: large;
 }
