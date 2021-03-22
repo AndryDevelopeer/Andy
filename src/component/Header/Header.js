@@ -19,7 +19,7 @@ const Header = () => {
                                                             activeClassName={"s.activeLink"}>Friends</NavLink></div>
                 <div className={s.Header_nav_item}><NavLink to="/search"
                                                             activeClassName={"s.activeLink"}>Search</NavLink></div>
-                {/*<div className={s.Header_nav_item}><NavLink to="" activeClassName={"s.activeLink"}>Search</NavLink></div>*/}
+                {/*<div className={s.Header_nav_item}><NavLink to="" activeClassName={"s.activeLink"}>SearchAPI</NavLink></div>*/}
             </div>
             <div className={s.Header_search}>
                 <div>
