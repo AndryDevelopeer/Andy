@@ -1,11 +1,12 @@
 import React from "react"
 import {connect} from "react-redux";
 import {
-    followFriendsAC, inProcessAC,
-    setCurrentPageAC,
-    setUsersAC,
-    totalUsersCountAC,
-    unfollowFriendsAC
+    follow,
+    setCurrentPage,
+    setInProcess,
+    setTotalUsers,
+    setUsers,
+    unfollow,
 } from "../../redux/searchReducer";
 import * as axios from "axios";
 import Search from "./Search";
@@ -18,7 +19,7 @@ class SearchAPI extends React.Component {//создаем класс сеарч 
             .then(response => {//запрос на сервер
                 this.props.setInProcess(false)
                 this.props.setUsers(response.data.items);//ответ передаем в сетюзерс
-                this.props.totalUsers(response.data.totalCount);//ответ передаем в сетюзерс
+                this.props.setTotalUsers(response.data.totalCount);//ответ передаем в сетюзерс
             });
     }
     onPageChanged=(pageNumber)=>{
@@ -43,7 +44,7 @@ class SearchAPI extends React.Component {//создаем класс сеарч 
         </>
     }
 }
-const mapStateToProps = (state) => {
+let mapStateToProps = (state) => {
 
     return {
         users: state.searchPage.users,
@@ -54,28 +55,28 @@ const mapStateToProps = (state) => {
 
     }
 }
-const mapDispatchToProps = (dispatch) => {
+/*const mapDispatchToProps = (dispatch) => {
     return {
         follow: (userId) => {
-            dispatch(followFriendsAC(userId));
+            dispatch(follow(userId));
         },
         unfollow: (userId) => {
-            dispatch(unfollowFriendsAC(userId));
+            dispatch(unfollow(userId));
         },
         setUsers: (users) => {
-            dispatch(setUsersAC(users));
+            dispatch(setUsers(users));
         },
         setCurrentPage: (pageNumber) => {
-            dispatch(setCurrentPageAC(pageNumber))
+            dispatch(setCurrentPage(pageNumber))
         },
-        totalUsers:(totalCount)=>{
-            dispatch(totalUsersCountAC(totalCount))
+        setTotalUsers:(totalCount)=>{
+            dispatch(setTotalUsers(totalCount))
         },
         setInProcess:(inProcess)=>{
-            dispatch(inProcessAC(inProcess))
+            dispatch(setInProcess(inProcess))
         }
     }
-}
+}*/
 
-const SearchContainer = connect(mapStateToProps, mapDispatchToProps)(SearchAPI);
+const SearchContainer = connect(mapStateToProps,{follow,unfollow,setUsers,setCurrentPage,setTotalUsers,setInProcess})(SearchAPI);
 export default SearchContainer

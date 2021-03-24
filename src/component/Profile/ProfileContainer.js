@@ -1,25 +1,39 @@
 import React from "react"
-import {addPostActionCreator, newPostTextActionCreator} from "../../redux/profileReducer";
 import Profile from "./Profile";
 import {connect} from "react-redux";
+import * as axios from "axios";
+import {setAboutMe, setAva, setHeaderAva, setUserName} from "../../redux/profileReducer";
 
 
-/*
-const ProfileContainer = (props) => {
-       let textNew = () => {/!* вызываем функцию при клеке*!/
-        props.dispatch(addPostActionCreator());
+class ProfileAPI extends React.Component {
+    componentDidMount() {
+        debugger
+        /*this.props.profailInfo.setInProcess(true)*/
+        axios.get(`https://social-network.samuraijs.com/api/1.0/profile/11`)
+            .then(response => {//запрос на сервер
+                debugger
+                // this.props.profailInfo.setInProcess(false)
+                this.props.setUserName(response.data.fullName)
+                this.props.setAboutMe(response.data.aboutMe)//ответ передаем в сетюзерс
+                this.props.setAva(response.data.photos.small)//ответ передаем в сетюзерс
+                this.props.setHeaderAva(response.data.photos.large)//ответ передаем в сетюзерс
+
+            });
     }
-    let newPostText = (e) => {
-        let text = e.target.value;/!* let text = refNews.current.value;/!*достаем значение ссылки*!/!*!/
-        props.dispatch(newPostTextActionCreator(text));/!*выводим значение переменной text*!/
+
+    render() {
+        return(<Profile {...this.props}/>)
     }
-    return ( <Profile/>
-    )
-}*/
-const mapDispatchToProps=(dispatch)=>{
-    return{textNew:()=>dispatch(),
-        text:(text)=>dispatch((text))
+
+}
+const mapStateToProps = (state)=>{
+
+    return{
+        aboutMe:state.profilePage.aboutMe,
+        fullName:state.profilePage.name,
+        ava:state.profilePage.ava,
+        highAva:state.profilePage.highAva
     }
 }
-const ProfileContainer=connect(mapDispatchToProps)(Profile);
+const ProfileContainer = connect (mapStateToProps,{setAboutMe,setUserName,setAva,setHeaderAva})(ProfileAPI)
 export default ProfileContainer;

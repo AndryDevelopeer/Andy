@@ -1,12 +1,12 @@
 import React from 'react'; /* импорт библиотеки реакт для синтаксиса JSX */
 import s from "./App.module.css"//импорт таблицы стилей как обьект S
 import Header from "./component/Header/Header";// импорт компоненты
-import Profile from "./component/Profile/Profile";//импорт компоненты
 import {Route} from 'react-router-dom';// импорт библиотеки отрисовки по url экспортировалось не поумолчанию
 import DialogsContainer from "./component/Dialogs/DialogsContainer";
 import MyFriendsContainer from "./component/MyFriends/MyFriendsContainer";
 import NotificationContainer from "./component/Notification/NotificationContainer";
 import SearchContainer from "./component/Search/SearchContainer";
+import ProfileContainer from "./component/Profile/ProfileContainer";
 //импорт компоненты
 
 
@@ -19,7 +19,7 @@ const App = (props) => /* создаем компоненту которая в�
                 <div className={s.FirstPage}>
                     <div className={s.content}>
                         <Route path="/myProfile"
-                               render={() => <Profile/>}/>{/*рендирится нужная компонента по url адресу */}
+                               render={() => <ProfileContainer/>}/>{/*рендирится нужная компонента по url адресу */}
                         <Route path="/message"
                                render={() => <DialogsContainer/>}/>{/*рендирится нужная компонента по url адресу */}
                         <Route path="/myFriends" render={() => <MyFriendsContainer/>}/>

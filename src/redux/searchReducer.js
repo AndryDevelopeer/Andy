@@ -11,10 +11,11 @@ let initialState = {
     pageSize: 100,
     totalUsersCount: 40,
     currentPage: 1,
+
     inProcess: true
 
 };/*для первоночальной отрисовки стэйта, после этого стэйт отрисовавыеться при изменении*/
-debugger
+
 const searchReducer = (state = initialState, action) => {
     switch (action.type) {
         case  SET_USERS: {
@@ -63,13 +64,11 @@ const searchReducer = (state = initialState, action) => {
     }
 }
 /*создание экшенов для диспатча*/
-export const setUsersAC = (users) => ({type: SET_USERS, users});
-export const setCurrentPageAC = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
-export const totalUsersCountAC = (totalUsersCount) => ({type: SET_TOTAL_USERS, totalUsersCount});
-export const inProcessAC = (inProcess) => ({type: SET_IN_PROCESS, inProcess});
-export const followFriendsAC = (userId) => ({type: FOLLOW, userId});
-export const unfollowFriendsAC = (userId) => ({type: UNFOLLOW, userId});
-/*если функция только возвращает значение ее можно записать так*/
-export const showMoreAC = () => ({type: SHOW_MORE});
+export const setUsers = (users) => ({type: SET_USERS, users});
+export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
+export const setTotalUsers = (totalUsersCount) => ({type: SET_TOTAL_USERS, totalUsersCount});
+export const setInProcess = (inProcess) => ({type: SET_IN_PROCESS, inProcess});
+export const follow = (userId) => ({type: FOLLOW, userId});
+export const unfollow = (userId) => ({type: UNFOLLOW, userId});
 /*если функция только возвращает значение ее можно записать так*/
 export default searchReducer;
