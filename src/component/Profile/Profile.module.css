@@ -19,6 +19,7 @@
 .Profile_header_img img {
     width: 100%;
     display: block;
+
 }
 
 .Ava {
@@ -32,6 +33,7 @@
     position: relative;
     z-index: 1;
     align-content: center;
+    background-color: black;
 }
 .Ava img {
     width: 100%;

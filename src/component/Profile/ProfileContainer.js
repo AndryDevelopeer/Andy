@@ -4,14 +4,11 @@ import {connect} from "react-redux";
 import * as axios from "axios";
 import {setAboutMe, setAva, setHeaderAva, setUserName} from "../../redux/profileReducer";
 
-
 class ProfileAPI extends React.Component {
-    componentDidMount() {
-        debugger
+    componentDidMount() {//метод жизненного цикла
         /*this.props.profailInfo.setInProcess(true)*/
-        axios.get(`https://social-network.samuraijs.com/api/1.0/profile/11`)
+        axios.get(`https://social-network.samuraijs.com/api/1.0/profile/2`)
             .then(response => {//запрос на сервер
-                debugger
                 // this.props.profailInfo.setInProcess(false)
                 this.props.setUserName(response.data.fullName)
                 this.props.setAboutMe(response.data.aboutMe)//ответ передаем в сетюзерс
@@ -20,20 +17,18 @@ class ProfileAPI extends React.Component {
 
             });
     }
-
     render() {
-        return(<Profile {...this.props}/>)
-    }
-
-}
-const mapStateToProps = (state)=>{
-
-    return{
-        aboutMe:state.profilePage.aboutMe,
-        fullName:state.profilePage.name,
-        ava:state.profilePage.ava,
-        highAva:state.profilePage.highAva
+        return (<Profile {...this.props}/>)
     }
 }
-const ProfileContainer = connect (mapStateToProps,{setAboutMe,setUserName,setAva,setHeaderAva})(ProfileAPI)
+const mapStateToProps = (state) => {
+    return {
+        aboutMe: state.profilePage.aboutMe,
+        fullName: state.profilePage.name,
+        ava: state.profilePage.ava,
+        highAva: state.profilePage.highAva,
+
+    }
+}
+const ProfileContainer = connect(mapStateToProps, {setAboutMe, setUserName, setAva, setHeaderAva})(ProfileAPI)
 export default ProfileContainer;

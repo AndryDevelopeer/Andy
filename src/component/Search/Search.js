@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./Search.module.css"
 import userPhoto from "../img/user.png"
-
+import {NavLink} from "react-router-dom";
 
 let Search = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -28,7 +28,7 @@ let Search = (props) => {
             <div>{props.users.map(u =>
                 <div className={s.users} key={u.id}>
                     <div className={s.users_img}>
-                        <img src={u.photos.small != null ? u.photos.small : userPhoto} alt=""/>
+                       <NavLink to={"myProfile/"+u.id}><img src={u.photos.small != null ? u.photos.small : userPhoto} alt=""/></NavLink>
                     </div>
                     {/*ставим маленькое фото если оно не равно нули, иначе берем юзерФото*/}
                     <div className={s.users_action}>
