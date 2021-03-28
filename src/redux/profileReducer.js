@@ -4,7 +4,10 @@ const ABOUT_ME = "ABOUT-ME";
 const USER_NAME = "USE-NAME";
 const AVA = "AVA";
 const HIGH_AVA = "HIGH_AVA";
-
+const LOOKING_JOB = "LOOKING_JOB";
+const JOB_DESCRIPTION ="JOB_DESCRIPTION";
+const SET_CONTACTS ="SET_CONTACTS";
+const SET_PROCESS ="SET_PROCESS"
 let initialState =/*для первоночальной отрисовки стэйта, после этого стэйт отрисовавыеться при изменении*/
     {
         newPostText: "New post",
@@ -52,15 +55,16 @@ let initialState =/*для первоночальной отрисовки ст�
                     "томографии."
             }
         ],
-        setInProcess: false,
+        inProcess: true,
         aboutMe: "",
         contacts: "",
-        ava:"",
-        highAva:"",
-        name: ""
+        ava: "",
+        highAva: "",
+        name: "",
+        lookingJod: "",
+        jobDescription:"",
 
     };
-
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {/*otsle*/
         case ADD_POST: {
@@ -83,14 +87,12 @@ const profileReducer = (state = initialState, action) => {
             stateCopy.newPostText = ("");//зануляем инпут
             return stateCopy
         }//возвращаем копию
-
         case ADD_TEXT_POST: {
             let stateCopy = {...state};//делаем поверностную копию обьекта
             stateCopy.newPostText = {...state.newPostText}//делаем глубокую копию обьекта
             stateCopy.newPostText = action.text;/*меняем текс при изменении в поле инпут*/
             return stateCopy;
         }//возвращаем копию
-
         case USER_NAME: {
             let stateCopy = {...state};//делаем поверностную копию обьекта
             stateCopy.name = {...state.name}//делаем глубокую копию обьекта
@@ -115,8 +117,29 @@ const profileReducer = (state = initialState, action) => {
             stateCopy.highAva = action.link;/*меняем текс при изменении в поле инпут*/
             return stateCopy;
         }
-
-
+        case LOOKING_JOB: {
+            let stateCopy = {...state};//делаем поверностную копию обьекта
+            stateCopy.lookingJod = {...state.lookingJod}//делаем глубокую копию обьекта
+            stateCopy.lookingJod = action.data;/*меняем текс при изменении в поле инпут*/
+            return stateCopy;
+        }
+        case JOB_DESCRIPTION: {
+            let stateCopy = {...state};//делаем поверностную копию обьекта
+            stateCopy.jobDescription = {...state.jobDescription}//делаем глубокую копию обьекта
+            stateCopy.jobDescription = action.data;/*меняем текс при изменении в поле инпут*/
+            return stateCopy;
+        }
+        case SET_CONTACTS: {
+            let stateCopy = {...state};//делаем поверностную копию обьекта
+            stateCopy.contacts = {...state.contacts}//делаем глубокую копию обьекта
+            stateCopy.contacts = action.data;/*меняем текс при изменении в поле инпут*/
+            return stateCopy;
+        } case SET_PROCESS: {
+            let stateCopy = {...state};//делаем поверностную копию обьекта
+            stateCopy.inProcess = {...state.inProcess}//делаем глубокую копию обьекта
+            stateCopy.inProcess = action.data;/*меняем текс при изменении в поле инпут*/
+            return stateCopy;
+        }
         default: {
             return state;/*по умолчанию возвращаем стайт который к нам пришел без изменения*/
         }
@@ -130,6 +153,8 @@ export const setAboutMe = (about) => ({type: ABOUT_ME, about}); /*export from ad
 export const setUserName = (name) => ({type: USER_NAME, name}); /*export from addPost in Profile*/
 export const setAva = (link) => ({type: AVA, link}); /*export from addPost in Profile*/
 export const setHeaderAva = (link) => ({type: HIGH_AVA, link}); /*export from addPost in Profile*/
-
-/*если функция только возвращает значение ее можно записать так*/
+export const setLookingJob = (data) => ({type: LOOKING_JOB, data}); /*export from addPost in Profile*/
+export const setJobDescription = (data) => ({type: JOB_DESCRIPTION, data}); /*export from addPost in Profile*/
+export const setContacts = (data) => ({type: SET_CONTACTS, data});
+export const setInProcess = (data) => ({type: SET_PROCESS, data});
 export default profileReducer;

@@ -11,9 +11,7 @@ let initialState = {
     pageSize: 100,
     totalUsersCount: 40,
     currentPage: 1,
-
     inProcess: true
-
 };/*для первоночальной отрисовки стэйта, после этого стэйт отрисовавыеться при изменении*/
 
 const searchReducer = (state = initialState, action) => {

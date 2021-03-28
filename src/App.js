@@ -8,17 +8,14 @@ import NotificationContainer from "./component/Notification/NotificationContaine
 import SearchContainer from "./component/Search/SearchContainer";
 import ProfileContainer from "./component/Profile/ProfileContainer";
 //импорт компоненты
-
-
 const App = (props) => /* создаем компоненту которая возвращает разметку jsx*/ {
-
     return (
         <div className={s.screen}>
             <div className={s.App}>
                 <Header/>{/*компонента*/}
                 <div className={s.FirstPage}>
                     <div className={s.content}>
-                        <Route path="/myProfile"
+                        <Route path="/myProfile/:userId?"
                                render={() => <ProfileContainer/>}/>{/*рендирится нужная компонента по url адресу */}
                         <Route path="/message"
                                render={() => <DialogsContainer/>}/>{/*рендирится нужная компонента по url адресу */}
@@ -32,5 +29,4 @@ const App = (props) => /* создаем компоненту которая в�
         </div>
     )
 }
-
 export default App;// експортируем компоненту
