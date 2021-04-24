@@ -1,3 +1,5 @@
+import {usersAPI} from "../api/api";
+
 const SET_LOGIN = "SET_LOGIN";
 const SET_NAME = "SET_NAME";
 const SET_ID = "SET_ID";
@@ -47,4 +49,19 @@ export const setLogin = (data) => ({type: SET_LOGIN, data});
 export const setName = (login) => ({type: SET_NAME, login});
 export const setId = (id) => ({type: SET_ID, id});
 export const setMail = (email) => ({type: SET_MAIL, email});
+
+export const setLoginThunkCreator = ()=>{
+    return(dispatch)=>{
+        usersAPI.auth()//вызываем сушность из изерапи с именем ауф
+            .then(response => {
+                if(response.data.resultCode===0) {//если код ошибки ответа равен 0 тогда
+                    dispatch(setLogin(response.data.resultCode))
+                    dispatch(setName(response.data.data.login))
+                    dispatch(setId(response.data.data.id))
+                    dispatch(setMail(response.data.data.email))
+                    console.log(response.data)
+                }
+            })
+    }
+}
 export default loginReducer;
