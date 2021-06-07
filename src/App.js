@@ -7,6 +7,7 @@ import MyFriendsContainer from "./component/MyFriends/MyFriendsContainer";
 import NotificationContainer from "./component/Notification/NotificationContainer";
 import SearchContainer from "./component/Search/SearchContainer";
 import ProfileContainer from "./component/Profile/ProfileContainer";
+import Authentication from "./component/Authentication/Authentication";
 //импорт компоненты
 const App = (props) => /* создаем компоненту которая возвращает разметку jsx*/ {
     return (
@@ -22,6 +23,8 @@ const App = (props) => /* создаем компоненту которая в�
                         <Route path="/myFriends" render={() => <MyFriendsContainer/>}/>
                         <Route path="/search"
                                render={() => <SearchContainer/>}/>{/*рендирится компонента по url адресу */}
+                               <Route path="/login"
+                               render={() => <Authentication/>}/>{/*рендирится компонента по url адресу */}
                     </div>
                     <NotificationContainer/>
                 </div>

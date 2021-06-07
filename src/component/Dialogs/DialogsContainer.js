@@ -4,9 +4,10 @@ import {NavLink} from "react-router-dom";
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
 
-const mapStateToProps=(state)=>{
-    return  {
-        dialogsElements:state.dialogsPage.dialogs.map(d =>
+const mapStateToProps = (state) => {
+    return {
+        isAuth: state.login.isAuth,
+        dialogsElements: state.dialogsPage.dialogs.map(d =>
             <NavLink to={"message"} key={d.id}>
                 <div className={s.itemDialog}>
                     <div className={s.itemDialogAva}><img src={d.ava} alt=""/></div>
@@ -18,6 +19,6 @@ const mapStateToProps=(state)=>{
             </NavLink>)
     }
 }
-const DialogsContainer=connect(mapStateToProps)(Dialogs)
+const DialogsContainer = connect(mapStateToProps)(Dialogs)
 export default DialogsContainer;
 

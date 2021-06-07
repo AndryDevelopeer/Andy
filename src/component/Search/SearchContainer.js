@@ -32,6 +32,7 @@ class SearchAPI extends React.Component {//создаем класс сеарч 
 }
 let mapStateToProps = (state) => {
     return {
+        isAuth: state.login.isAuth,
         users: state.searchPage.users,
         pageSize: state.searchPage.pageSize,
         totalUsersCount: state.searchPage.totalUsersCount,

@@ -1,12 +1,13 @@
 import React from "react"
 import s from "./Profile.module.css"
 import MyBlogContainer from "./MyBlog/MyBlogContainer";
-import {NavLink} from "react-router-dom";
+import {NavLink, Redirect} from "react-router-dom";
 import userAva from "../img/user.png"
 import Preloader from "../Preloader/Preloader";
 
 const Profile = (props) => {
     let lookingJob = props.lookingJob;
+    if(props.isAuth===false) return <Redirect to={"/login"}/>
     return (<div className={s.Profile}>
             <div className={s.Profile_header_img}>
                 {props.highAva ? <img src={props.highAva} alt=""/> :

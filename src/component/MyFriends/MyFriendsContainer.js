@@ -7,6 +7,7 @@ import MyFriends from "./MyFriends";
 const mapStateToProps=(state)=>{
 
     return{
+        isAuth:state.login.isAuth,
         friend:state.myFriendsArray.map(f =>
             <NavLink to={"myFriends"}>
                 <div className={s.itemDialog}>

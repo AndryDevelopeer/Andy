@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./Search.module.css"
 import userPhoto from "../img/user.png"
-import {NavLink} from "react-router-dom";
+import {NavLink, Redirect} from "react-router-dom";
 
 let Search = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -11,6 +11,7 @@ let Search = (props) => {
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i)
     }//пушим количество страниц в массив
+    if(props.isAuth===false) return <Redirect to={"/login"}/>
     return (
         <div>
             <div><h3 className={s.users_h3}>Users </h3>{props.inProcces ? props.inProcces :

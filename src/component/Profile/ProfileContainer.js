@@ -41,6 +41,7 @@ class ProfileAPI extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
+        isAuth: state.login.isAuth,
         aboutMe: state.profilePage.aboutMe,
         fullName: state.profilePage.name,
         ava: state.profilePage.ava,

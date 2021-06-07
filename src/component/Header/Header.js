@@ -5,15 +5,11 @@ import LoginContainer from "../Login/LoginContainer";
 
 
 const Header = () => {
-
     let friendYourself = () => {
         (alert("2021 год"))
     }
-
     return (<div className={s.Header}>
             <div className={s.Header_nav}>
-                {/* <div className={s.Header_nav_item}><NavLink to="/myProfile"
-                                                            activeClassName={"s.activeLink"}>Profile</NavLink></div>*/}
                 <div className={s.Header_nav_item}><NavLink to="/message"
                                                             activeClassName={"s.activeLink"}>Message</NavLink></div>
                 <div className={s.Header_nav_item}><NavLink to="/myFriends"

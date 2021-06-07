@@ -7,6 +7,7 @@ import {connect} from "react-redux";
 /*контейнерная компонента*/
 
 const mapStateToProps=(state)=>{
+
     return {
         newTextMessage:state.dialogsPage.newTextMessage,
         text:state.dialogsPage.sendTextMessage.map(p =>/*достаем список собеседников из проспсов*/
